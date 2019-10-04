@@ -1,0 +1,112 @@
+{
+    "items": [
+        {
+            "sys": { "id": "1" },
+            "fields": {
+                "name": "Adapter Charger",
+                "description": "Adapter charger for smartphones",
+                "price": 9.99,
+                "image": { "fields": { "file": { "url": "../images/product_1.jpeg" } } }
+            }
+        },
+        {
+            "sys": { "id": "2" },
+            "fields": {
+                "name": "Plastic Cases",
+                "description": "Multicolor mobile phone plastic cases",
+                "price": 6.98,
+                "image": { "fields": { "file": { "url": "../images/product_2.jpeg" } } }
+            }
+        },
+        {
+            "sys": { "id": "3" },
+            "fields": {
+                "name": "Glass Protector",
+                "description": "Screen glass protector for smartphones",
+                "price": 5.95,
+                "image": { "fields": { "file": { "url": "../images/product_3.jpeg" } } }
+            }
+        },
+        {
+            "sys": { "id": "4" },
+            "fields": {
+                "name": "Headphones",
+                "description": "White headphones for smartphones",
+                "price": 9.98,
+                "image": { "fields": { "file": { "url": "../images/product_4.jpeg" } } }
+            }
+        },
+        {
+            "sys": { "id": "5" },
+            "fields": {
+                "name": "Holder",
+                "description": "Smartphone holder for cars",
+                "price": 3.59,
+                "image": { "fields": { "file": { "url": "../images/product_5.jpeg" } } }
+            }
+        },
+        {
+            "sys": { "id": "6" },
+            "fields": {
+                "name": "Adapter Charger",
+                "description": "desc",
+                "price": 10.99,
+                "image": { "fields": { "file": { "url": "../images/product_6.jpeg" } } }
+            }
+        },
+        {
+            "sys": { "id": "7" },
+            "fields": {
+                "name": "Adapter Charger",
+                "description": "desc",
+                "price": 10.99,
+                "image": { "fields": { "file": { "url": "../images/product_7.jpeg" } } }
+            }
+        },
+        {
+            "sys": { "id": "8" },
+            "fields": {
+                "name": "Adapter Charger",
+                "description": "desc",
+                "price": 10.99,
+                "image": { "fields": { "file": { "url": "../images/product_8.jpeg" } } }
+            }
+        },
+        {
+            "sys": { "id": "9" },
+            "fields": {
+                "name": "Adapter Charger",
+                "description": "desc",
+                "price": 10.99,
+                "image": { "fields": { "file": { "url": "../images/product_9.jpeg" } } }
+            }
+        },
+        {
+            "sys": { "id": "10" },
+            "fields": {
+                "name": "Adapter Charger",
+                "description": "desc",
+                "price": 10.99,
+                "image": { "fields": { "file": { "url": "../images/product_10.jpeg" } } }
+            }
+        },
+        {
+            "sys": { "id": "11" },
+            "fields": {
+                "name": "Adapter Charger",
+                "description": "desc",
+                "price": 10.99,
+                "image": { "fields": { "file": { "url": "../images/product_11.jpeg" } } }
+            }
+        },
+        {
+            "sys": { "id": "12" },
+            "fields": {
+                "name": "Adapter Charger",
+                "description": "desc",
+                "price": 10.99,
+                "image": { "fields": { "file": { "url": "../images/product_12.jpeg" } } }
+            }
+        }
+    ]
+}
