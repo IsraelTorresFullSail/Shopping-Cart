@@ -1,0 +1,27 @@
+{
+  "name": "shopping-cart",
+  "version": "1.0.0",
+  "description": "A shopping cart web application to sale smartphone accesories",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \\\\\\\"Error: no test specified\\\\\\\" && exit 1",
+    "start": "gulp",
+    "build": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IsraelTorresFullSail/Shopping-Cart.git"
+  },
+  "author": "Israel Torres",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IsraelTorresFullSail/Shopping-Cart/issues"
+  },
+  "homepage": "https://github.com/IsraelTorresFullSail/Shopping-Cart#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2",
+    "node-sass": "^4.12.0"
+  }
+}

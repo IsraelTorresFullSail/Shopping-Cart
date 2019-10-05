@@ -1,0 +1,10 @@
+.DS_Store
+
+# logs
+*.log
+
+# Node Modules
+node_modules/
+
+# sass cache
+.sass-cache
