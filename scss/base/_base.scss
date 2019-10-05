@@ -1,0 +1,44 @@
+/* DEFAULTS ====================================== */
+html {
+    background-color: $gray-light;
+    font-family: $font-stack;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+}
+
+.containerDiv {
+    max-width: 1400px;
+    width: 100%;
+    @extend %center-element;
+}
+
+/* TYPOGRAPHY ===================================== */
+h1 {
+    font-size: $h1-size;
+    color: $dark;
+}
+
+h2 {
+    font-size: $h2-size;
+    color: $dark;
+}
+
+h3 {
+    font-size: $h3-size;
+    color: $dark;
+}
+
+p {
+    font-size: $p-standard;
+    color: $gray-strong;
+
+    .p-small {
+        font-size: $p-small;
+    }
+}

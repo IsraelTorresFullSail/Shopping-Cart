@@ -1,0 +1,38 @@
+.containerDiv {
+  margin-left: auto;
+  margin-right: auto; }
+
+/* DEFAULTS ====================================== */
+html {
+  background-color: #e3e5e9;
+  font-family: "ubuntu", sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  font-style: normal; }
+
+body {
+  margin: 0; }
+
+.containerDiv {
+  max-width: 1400px;
+  width: 100%; }
+
+/* TYPOGRAPHY ===================================== */
+h1 {
+  font-size: 1.5em;
+  color: #40434a; }
+
+h2 {
+  font-size: 1.125em;
+  color: #40434a; }
+
+h3 {
+  font-size: 1em;
+  color: #40434a; }
+
+p {
+  font-size: 0.875em;
+  color: #bec4cb; }
+  p .p-small {
+    font-size: 0.75em; }
