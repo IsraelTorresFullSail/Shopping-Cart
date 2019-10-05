@@ -1,0 +1,137 @@
+/* HEADER ========================================= */
+nav {
+    background-color: $white;
+    box-shadow: $shadow-down;
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    width: 100%;
+
+    .cont-1 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        @extend %cont-padding;
+
+        ul {
+            width: 33.33%;
+            list-style-type: none;
+            overflow: hidden;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-content: center;
+            padding-inline-start: 0;
+
+            li {
+                padding: 0 25px;
+            }
+        }
+    
+        .logo {
+            width: 33.33%;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+
+            img {
+                width: 50%;
+                max-width: 100%;
+                margin: auto;
+            }
+        }
+    
+        .cart {
+            width: 33.33%;
+            display: flex;
+            justify-content: flex-end;
+            align-content: center;
+
+            i {
+                margin: auto 50px;
+            }
+        }
+    }
+}
+
+/* MAIN   ========================================= */
+main {
+    padding:  81.88px 0 53px 0;
+    height: 88vh;
+    background-color: rgba(255, 255, 255, 0.5);
+
+    #myVideo {
+        position: fixed;
+        width: 100%;
+        height: auto;
+        z-index: -1;
+    }
+
+    .cont-2 {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        @extend %cont-padding;
+
+        .product-info {
+
+        }
+
+        .product-grid {
+
+        }
+    }
+}
+/* FOOTER ========================================= */
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: $white;
+    box-shadow: $shadow-down;
+    width: 100%;
+    margin: 0;
+
+    .cont-3 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-content: center;
+        @extend %cont-padding;
+
+        .copyright {
+            width: 50%;
+            padding: 0 25px;
+            display: flex;
+            align-content: center;
+
+            p {
+                margin: auto 0;
+            }
+        }
+
+        .social-media {
+            width: 50%;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-content: center;
+            padding: 0 25px;
+
+            .icon {
+                margin: 1%;
+                height: 40px;
+                width: 40px;
+                background-color: $gray-strong;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-content: center;
+
+                i {
+                    margin: auto;
+                }
+            }
+        }
+    }
+}
