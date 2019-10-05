@@ -6,7 +6,7 @@
                 "name": "Adapter Charger",
                 "description": "Adapter charger for smartphones",
                 "price": 9.99,
-                "image": { "fields": { "file": { "url": "../images/product_1.jpeg" } } }
+                "image": { "fields": { "file": { "url": "../images/product_1.jpg" } } }
             }
         },
         {
@@ -15,7 +15,7 @@
                 "name": "Plastic Cases",
                 "description": "Multicolor mobile phone plastic cases",
                 "price": 6.98,
-                "image": { "fields": { "file": { "url": "../images/product_2.jpeg" } } }
+                "image": { "fields": { "file": { "url": "../images/product_2.jpg" } } }
             }
         },
         {
@@ -24,7 +24,7 @@
                 "name": "Glass Protector",
                 "description": "Screen glass protector for smartphones",
                 "price": 5.95,
-                "image": { "fields": { "file": { "url": "../images/product_3.jpeg" } } }
+                "image": { "fields": { "file": { "url": "../images/product_3.jpg" } } }
             }
         },
         {
@@ -33,7 +33,7 @@
                 "name": "Headphones",
                 "description": "White headphones for smartphones",
                 "price": 9.98,
-                "image": { "fields": { "file": { "url": "../images/product_4.jpeg" } } }
+                "image": { "fields": { "file": { "url": "../images/product_4.jpg" } } }
             }
         },
         {
@@ -42,70 +42,70 @@
                 "name": "Holder",
                 "description": "Smartphone holder for cars",
                 "price": 3.59,
-                "image": { "fields": { "file": { "url": "../images/product_5.jpeg" } } }
+                "image": { "fields": { "file": { "url": "../images/product_5.jpg" } } }
             }
         },
         {
             "sys": { "id": "6" },
             "fields": {
-                "name": "Adapter Charger",
-                "description": "desc",
-                "price": 10.99,
-                "image": { "fields": { "file": { "url": "../images/product_6.jpeg" } } }
+                "name": "Popsockets",
+                "description": "Popsockets Expanding Phone Stand and Grip",
+                "price": 5.95,
+                "image": { "fields": { "file": { "url": "../images/product_6.jpg" } } }
             }
         },
         {
             "sys": { "id": "7" },
             "fields": {
-                "name": "Adapter Charger",
-                "description": "desc",
-                "price": 10.99,
-                "image": { "fields": { "file": { "url": "../images/product_7.jpeg" } } }
+                "name": "Portable Phone Charger",
+                "description": "Slim portable phone charger",
+                "price": 49.95,
+                "image": { "fields": { "file": { "url": "../images/product_7.jpg" } } }
             }
         },
         {
             "sys": { "id": "8" },
             "fields": {
-                "name": "Adapter Charger",
-                "description": "desc",
-                "price": 10.99,
-                "image": { "fields": { "file": { "url": "../images/product_8.jpeg" } } }
+                "name": "Virtual Reality Glasses",
+                "description": "Virtual Reality glasses and game pad",
+                "price": 39.99,
+                "image": { "fields": { "file": { "url": "../images/product_8.jpg" } } }
             }
         },
         {
             "sys": { "id": "9" },
             "fields": {
-                "name": "Adapter Charger",
-                "description": "desc",
-                "price": 10.99,
-                "image": { "fields": { "file": { "url": "../images/product_9.jpeg" } } }
+                "name": "Smartphone wireless charger",
+                "description": "Quake Wireless Charging Pad",
+                "price": 8.49,
+                "image": { "fields": { "file": { "url": "../images/product_9.jpg" } } }
             }
         },
         {
             "sys": { "id": "10" },
             "fields": {
-                "name": "Adapter Charger",
-                "description": "desc",
-                "price": 10.99,
-                "image": { "fields": { "file": { "url": "../images/product_10.jpeg" } } }
+                "name": "Fitness Tracker",
+                "description": "Inspire Activity Fitness Tracker",
+                "price": 69.99,
+                "image": { "fields": { "file": { "url": "../images/product_10.jpg" } } }
             }
         },
         {
             "sys": { "id": "11" },
             "fields": {
-                "name": "Adapter Charger",
-                "description": "desc",
-                "price": 10.99,
-                "image": { "fields": { "file": { "url": "../images/product_11.jpeg" } } }
+                "name": "Macro Lens",
+                "description": "Macro lens for smartphone camera",
+                "price": 4.93,
+                "image": { "fields": { "file": { "url": "../images/product_11.jpg" } } }
             }
         },
         {
             "sys": { "id": "12" },
             "fields": {
-                "name": "Adapter Charger",
-                "description": "desc",
-                "price": 10.99,
-                "image": { "fields": { "file": { "url": "../images/product_12.jpeg" } } }
+                "name": "Gamepad",
+                "description": "Gamepad for smartphones",
+                "price": 14.95,
+                "image": { "fields": { "file": { "url": "../images/product_12.jpg" } } }
             }
         }
     ]
