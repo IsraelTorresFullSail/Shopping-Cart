@@ -6,16 +6,23 @@ html {
     line-height: 20px;
     font-weight: 400;
     font-style: normal;
+    height: 100%;
 }
 
 body {
     margin: 0;
     position: relative;
+    height: 100%;
+    background-image: url('../../images/bg-picture.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .containerDiv {
     max-width: 1400px;
     width: 100%;
+    min-height: 50px;
     @extend %center-element;
 }
 
@@ -38,8 +45,9 @@ h3 {
 p {
     font-size: $p-standard;
     color: $gray-strong;
-
-    .p-small {
-        font-size: $p-small;
-    }
+}
+.p-small {
+    font-size: $p-small;
+    text-transform: uppercase;
+    line-height: 0.7em;
 }

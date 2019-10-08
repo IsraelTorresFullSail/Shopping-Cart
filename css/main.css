@@ -8,20 +8,27 @@ nav .cont-1, main .cont-2, footer .cont-3 {
 
 /* DEFAULTS ====================================== */
 html {
-  background-color: #e3e5e9;
+  background-color: #f6f8fa;
   font-family: "ubuntu", sans-serif;
   font-size: 16px;
   line-height: 20px;
   font-weight: 400;
-  font-style: normal; }
+  font-style: normal;
+  height: 100%; }
 
 body {
   margin: 0;
-  position: relative; }
+  position: relative;
+  height: 100%;
+  background-image: url("../../images/bg-picture.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
 
 .containerDiv {
   max-width: 1400px;
-  width: 100%; }
+  width: 100%;
+  min-height: 50px; }
 
 /* TYPOGRAPHY ===================================== */
 h1 {
@@ -39,8 +46,11 @@ h3 {
 p {
   font-size: 0.875em;
   color: #bec4cb; }
-  p .p-small {
-    font-size: 0.75em; }
+
+.p-small {
+  font-size: 0.75em;
+  text-transform: uppercase;
+  line-height: 0.7em; }
 
 /* HEADER ========================================= */
 nav {
@@ -49,6 +59,7 @@ nav {
   position: fixed;
   overflow: hidden;
   top: 0;
+  z-index: 9999;
   width: 100%; }
   nav .cont-1 {
     display: flex;
@@ -84,18 +95,91 @@ nav {
 
 /* MAIN   ========================================= */
 main {
-  padding: 81.88px 0 53px 0;
-  height: 88vh;
-  background-color: rgba(255, 255, 255, 0.5); }
-  main #myVideo {
-    position: fixed;
-    width: 100%;
-    height: auto;
-    z-index: -1; }
+  padding: 130px 0 60px 0; }
   main .cont-2 {
     display: flex;
     flex-direction: row;
     justify-content: flex-start; }
+    main .cont-2 .product-info {
+      position: relative;
+      text-align: center;
+      width: 35%;
+      height: 100%;
+      padding: 40px;
+      background-color: #f6f8fa;
+      border: 5px solid #ffffff;
+      border-radius: 50px;
+      box-shadow: 0 2px 5px 0 rgba(64, 67, 74, 0.16); }
+      main .cont-2 .product-info img {
+        width: 50%;
+        height: auto;
+        border-radius: 10px;
+        opacity: 50%; }
+      main .cont-2 .product-info .product-description {
+        text-align: left;
+        margin-top: 40px;
+        margin-bottom: 100px; }
+        main .cont-2 .product-info .product-description .company-name {
+          text-transform: uppercase; }
+        main .cont-2 .product-info .product-description .review {
+          float: left;
+          margin-top: 40px;
+          margin-bottom: 40px; }
+        main .cont-2 .product-info .product-description .desc-price {
+          float: right;
+          margin-top: 40px;
+          margin-bottom: 40px; }
+        main .cont-2 .product-info .product-description .desc {
+          clear: both; }
+      main .cont-2 .product-info .arrow-wrapper {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        padding: 20px 40px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-content: center;
+        background-color: #ffffff;
+        border-radius: 50px; }
+        main .cont-2 .product-info .arrow-wrapper .arrow-left, main .cont-2 .product-info .arrow-wrapper .arrow-right {
+          background-color: #ff9937;
+          color: #ffffff;
+          padding: 10px;
+          border-radius: 50%;
+          height: 20px;
+          width: 20px;
+          box-shadow: 0 8px 8px 0 rgba(64, 67, 74, 0.2); }
+    main .cont-2 .product-grid {
+      width: 65%;
+      padding-left: 50px;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      flex-wrap: wrap; }
+      main .cont-2 .product-grid .product-card {
+        position: relative;
+        width: 18%;
+        margin-right: 2%;
+        margin-bottom: 2%;
+        padding: 8px 20px;
+        background-color: #ffffff;
+        border-radius: 25px;
+        box-shadow: 0 2px 5px 0 rgba(64, 67, 74, 0.16); }
+        main .cont-2 .product-grid .product-card img {
+          width: 100%;
+          border-radius: 10px; }
+        main .cont-2 .product-grid .product-card .add {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          padding: 15px;
+          background-color: #ff9937;
+          color: #ffffff;
+          border: none;
+          border-bottom-right-radius: 25px;
+          border-top-left-radius: 10px; }
 
 /* FOOTER ========================================= */
 footer {
@@ -103,7 +187,7 @@ footer {
   left: 0;
   bottom: 0;
   background-color: #ffffff;
-  box-shadow: 0 2px 5px 0 rgba(64, 67, 74, 0.16);
+  box-shadow: 0 2px 5px 2px rgba(64, 67, 74, 0.16);
   width: 100%;
   margin: 0; }
   footer .cont-3 {

@@ -1,8 +1,8 @@
 // Variables
 $white: #ffffff;
-$gray-light: #e3e5e9;
+$gray-light: #f6f8fa;
 $gray-strong: #bec4cb;
-$orange-strong: #fb540b;
+$orange-strong: #ff9937;
 $dark: #40434a;
 $orange-light: #c29a53;
 $red-blood: #be2a0f;
@@ -12,6 +12,8 @@ $h1-size: 1.5em;
 $h2-size: 1.125em;
 $h3-size: 1em;
 $p-standard: 0.875em;
-$p-small: 0.75em;
+$p-small: 0.75em; 
 
 $shadow-down: 0 2px 5px 0 rgba(64,67,74,0.16);
+$shadow-down-big: 0 8px 8px 0 rgba(64,67,74,0.2);
+$shadow-up: 0 2px 5px 2px rgba(64,67,74,0.16);

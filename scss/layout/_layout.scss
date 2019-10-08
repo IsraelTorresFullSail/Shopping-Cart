@@ -5,6 +5,7 @@ nav {
     position: fixed;
     overflow: hidden;
     top: 0;
+    z-index: 9999;
     width: 100%;
 
     .cont-1 {
@@ -56,17 +57,8 @@ nav {
 
 /* MAIN   ========================================= */
 main {
-    padding:  81.88px 0 53px 0;
-    height: 88vh;
-    background-color: rgba(255, 255, 255, 0.5);
-
-    #myVideo {
-        position: fixed;
-        width: 100%;
-        height: auto;
-        z-index: -1;
-    }
-
+    padding:  130px 0 60px 0;
+    
     .cont-2 {
         display: flex;
         flex-direction: row;
@@ -74,11 +66,110 @@ main {
         @extend %cont-padding;
 
         .product-info {
+            position: relative;
+            text-align: center;
+            width: 35%;
+            height: 100%;
+            padding: 40px;
+            background-color: $gray-light;
+            border: 5px solid $white;
+            border-radius: 50px;
+            box-shadow: $shadow-down;
 
+            img {
+                width: 50%;
+                height: auto;
+                border-radius: 10px;
+                opacity: 50%;
+            }
+
+            .product-description {
+                text-align: left;
+                margin-top: 40px;
+                margin-bottom: 100px;
+
+                .company-name {
+                    text-transform: uppercase;
+                }
+                .review {
+                    float: left;
+                    margin-top: 40px; 
+                    margin-bottom: 40px; 
+                }
+                .desc-price {
+                    float: right;
+                    margin-top: 40px; 
+                    margin-bottom: 40px; 
+                }
+                .desc {
+                    clear: both;
+                }
+            }
+
+            .arrow-wrapper {
+                position: absolute;
+                bottom: 0px;
+                left: 0px;
+                right: 0px;
+                padding: 20px 40px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-content: center;
+                background-color: $white;
+                border-radius: 50px;
+
+                .arrow-left {
+                    background-color: $orange-strong;
+                    color: $white;
+                    padding: 10px;
+                    border-radius: 50%;
+                    height: 20px;
+                    width: 20px;
+                    box-shadow: $shadow-down-big;
+                }
+
+                .arrow-right {
+                    @extend .arrow-left;
+                }
+            }
         }
 
         .product-grid {
+            width: 65%;
+            padding-left: 50px;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            flex-wrap: wrap;
 
+            .product-card {
+                position: relative;
+                width: 18%;
+                margin-right: 2%;
+                margin-bottom: 2%;  
+                padding: 8px 20px;
+                background-color: $white;
+                border-radius: 25px;
+                box-shadow: $shadow-down;
+
+                img {
+                    width: 100%;
+                    border-radius: 10px;
+                }
+
+                .add {
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    padding: 15px;
+                    background-color: $orange-strong;
+                    color: $white;
+                    border: none;
+                    border-bottom-right-radius: 25px;
+                    border-top-left-radius: 10px;
+                }
+            }
         }
     }
 }
@@ -88,7 +179,7 @@ footer {
     left: 0;
     bottom: 0;
     background-color: $white;
-    box-shadow: $shadow-down;
+    box-shadow: $shadow-up;
     width: 100%;
     margin: 0;
 
