@@ -23,6 +23,7 @@ body {
   background-image: url("../../images/bg-picture.jpg");
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: cover; }
 
 .containerDiv {
@@ -76,6 +77,8 @@ nav {
       padding-inline-start: 0; }
       nav .cont-1 ul li {
         padding: 0 25px; }
+      nav .cont-1 ul .current {
+        color: #ff9937; }
     nav .cont-1 .logo {
       width: 33.33%;
       display: flex;
@@ -86,12 +89,26 @@ nav {
         max-width: 100%;
         margin: auto; }
     nav .cont-1 .cart {
+      position: relative;
       width: 33.33%;
       display: flex;
       justify-content: flex-end;
       align-content: center; }
       nav .cont-1 .cart i {
         margin: auto 50px; }
+      nav .cont-1 .cart .fa-cart-plus {
+        color: #ff9937;
+        font-size: 1.5em; }
+      nav .cont-1 .cart .number {
+        position: absolute;
+        top: 17px;
+        right: 37px;
+        padding: 6px 7px;
+        background-color: #be2a0f;
+        border-radius: 5px; }
+        nav .cont-1 .cart .number p {
+          color: #ffffff;
+          margin: 0 auto; }
 
 /* MAIN   ========================================= */
 main {
@@ -101,15 +118,16 @@ main {
     flex-direction: row;
     justify-content: flex-start; }
     main .cont-2 .product-info {
-      position: relative;
+      position: sticky;
+      top: 130px;
       text-align: center;
       width: 35%;
       height: 100%;
       padding: 40px;
-      background-color: #f6f8fa;
+      background-color: rgba(190, 196, 203, 0.2);
       border: 5px solid #ffffff;
       border-radius: 50px;
-      box-shadow: 0 2px 5px 0 rgba(64, 67, 74, 0.16); }
+      box-shadow: 0 8px 8px 0 rgba(64, 67, 74, 0.2); }
       main .cont-2 .product-info img {
         width: 50%;
         height: auto;
@@ -130,7 +148,8 @@ main {
           margin-top: 40px;
           margin-bottom: 40px; }
         main .cont-2 .product-info .product-description .desc {
-          clear: both; }
+          clear: both;
+          color: #40434a; }
       main .cont-2 .product-info .arrow-wrapper {
         position: absolute;
         bottom: 0px;
@@ -166,10 +185,12 @@ main {
         padding: 8px 20px;
         background-color: #ffffff;
         border-radius: 25px;
-        box-shadow: 0 2px 5px 0 rgba(64, 67, 74, 0.16); }
+        box-shadow: 0 8px 8px 0 rgba(64, 67, 74, 0.2); }
         main .cont-2 .product-grid .product-card img {
           width: 100%;
           border-radius: 10px; }
+        main .cont-2 .product-grid .product-card .price {
+          color: #40434a; }
         main .cont-2 .product-grid .product-card .add {
           position: absolute;
           bottom: 0;

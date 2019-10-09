@@ -27,6 +27,10 @@ nav {
             li {
                 padding: 0 25px;
             }
+
+            .current {
+                color: $orange-strong;
+            }
         }
     
         .logo {
@@ -43,6 +47,7 @@ nav {
         }
     
         .cart {
+            position: relative;
             width: 33.33%;
             display: flex;
             justify-content: flex-end;
@@ -51,9 +56,30 @@ nav {
             i {
                 margin: auto 50px;
             }
+
+            .fa-cart-plus {
+                color: $orange-strong;
+                font-size: 1.5em;
+            }
+
+            .number {
+                position: absolute;
+                top: 17px;
+                right: 37px;
+                padding: 6px 7px;
+                background-color: $red-blood;
+                border-radius: 5px;
+
+                p {
+                    color: $white;
+                    margin: 0 auto;
+                }
+            }
         }
     }
 }
+
+
 
 /* MAIN   ========================================= */
 main {
@@ -66,15 +92,16 @@ main {
         @extend %cont-padding;
 
         .product-info {
-            position: relative;
+            position: sticky;
+            top: 130px;
             text-align: center;
             width: 35%;
             height: 100%;
             padding: 40px;
-            background-color: $gray-light;
+            background-color: rgba(190,196,203, 0.2);
             border: 5px solid $white;
             border-radius: 50px;
-            box-shadow: $shadow-down;
+            box-shadow: $shadow-down-big;
 
             img {
                 width: 50%;
@@ -103,6 +130,7 @@ main {
                 }
                 .desc {
                     clear: both;
+                    color: $dark;
                 }
             }
 
@@ -151,11 +179,15 @@ main {
                 padding: 8px 20px;
                 background-color: $white;
                 border-radius: 25px;
-                box-shadow: $shadow-down;
+                box-shadow: $shadow-down-big;
 
                 img {
                     width: 100%;
                     border-radius: 10px;
+                }
+
+                .price {
+                    color: $dark;
                 }
 
                 .add {

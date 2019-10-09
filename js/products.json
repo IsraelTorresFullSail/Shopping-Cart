@@ -3,6 +3,7 @@
         {
             "sys": { "id": "1" },
             "fields": {
+                "company": "Apple",
                 "name": "Adapter Charger",
                 "description": "Adapter charger for smartphones",
                 "price": 9.99,
@@ -12,6 +13,7 @@
         {
             "sys": { "id": "2" },
             "fields": {
+                "company": "Samsung",
                 "name": "Plastic Cases",
                 "description": "Multicolor mobile phone plastic cases",
                 "price": 6.98,
@@ -21,6 +23,7 @@
         {
             "sys": { "id": "3" },
             "fields": {
+                "company": "LG",
                 "name": "Glass Protector",
                 "description": "Screen glass protector for smartphones",
                 "price": 5.95,
@@ -30,6 +33,7 @@
         {
             "sys": { "id": "4" },
             "fields": {
+                "company": "Sony",
                 "name": "Headphones",
                 "description": "White headphones for smartphones",
                 "price": 9.98,
@@ -39,6 +43,7 @@
         {
             "sys": { "id": "5" },
             "fields": {
+                "company": "Maxell",
                 "name": "Holder",
                 "description": "Smartphone holder for cars",
                 "price": 3.59,
@@ -48,6 +53,7 @@
         {
             "sys": { "id": "6" },
             "fields": {
+                "company": "Belkin",
                 "name": "Popsockets",
                 "description": "Popsockets Expanding Phone Stand and Grip",
                 "price": 5.95,
@@ -57,6 +63,7 @@
         {
             "sys": { "id": "7" },
             "fields": {
+                "company": "Apple",
                 "name": "Portable Phone Charger",
                 "description": "Slim portable phone charger",
                 "price": 49.95,
@@ -66,6 +73,7 @@
         {
             "sys": { "id": "8" },
             "fields": {
+                "company": "Samsung",
                 "name": "Virtual Reality Glasses",
                 "description": "Virtual Reality glasses and game pad",
                 "price": 39.99,
@@ -75,6 +83,7 @@
         {
             "sys": { "id": "9" },
             "fields": {
+                "company": "LG",
                 "name": "Smartphone wireless charger",
                 "description": "Quake Wireless Charging Pad",
                 "price": 8.49,
@@ -84,6 +93,7 @@
         {
             "sys": { "id": "10" },
             "fields": {
+                "company": "Sony",
                 "name": "Fitness Tracker",
                 "description": "Inspire Activity Fitness Tracker",
                 "price": 69.99,
@@ -93,6 +103,7 @@
         {
             "sys": { "id": "11" },
             "fields": {
+                "company": "Maxell",
                 "name": "Macro Lens",
                 "description": "Macro lens for smartphone camera",
                 "price": 4.93,
@@ -102,6 +113,7 @@
         {
             "sys": { "id": "12" },
             "fields": {
+                "company": "Belkin",
                 "name": "Gamepad",
                 "description": "Gamepad for smartphones",
                 "price": 14.95,
