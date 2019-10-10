@@ -8,12 +8,10 @@ window.addEventListener("load", function() {
 class ShoppingCart {
     constructor() {
         console.log("Singleton Created");
-        
-        const ui = new UI();
-        const products = new Products();
 
         // get all products
-        products.getProducts().then(products => ui.displayProducts(products));
+        const products = new Products();
+        products.getProducts();
     }
 
     static getInstance() {
@@ -31,27 +29,33 @@ class ShoppingCart {
 
 // Getting the products
 class Products {
-    async getProducts() {
-        try {
-            let result = await fetch('/js/products.json');
-            let data = await result.json();
-                
-            let products = data.items;
-            products = products.map( item => {
-                const {company, name, description, price} = item.fields;
-                const {id} = item.sys;
-                const image = item.fields.image.fields.file.url;
-                return {company, name, description, price, id, image};
+    constructor(ui){
+        this.ui = new UI();
+    }
+    getProducts() {
+        fetch('/js/products.json')
+            .then( response => {
+                if(response.ok) {
+                    return response.json();
+                } else {
+                    throw response;
+                }
             })
-            return products;
-        } catch (error) {
-            console.log(error);
-        }
-        
+            .then( data => {
+                this.ui.displayProducts(data);
+                this.ui.prodDefault(data);
+            })
+            .catch( err => {
+                console.log(err);
+            })
     }
 }
 
-// display products
+// vars to use in UI
+let slideIndex = 0;
+let slideArray = [];
+
+// Display products
 class UI {
     displayProducts(products) {
         let result = '';
@@ -62,10 +66,39 @@ class UI {
                     <h2>${product.name}</h2>
                     <img src=${product.image} alt=${product.name}>
                     <p class="price">${product.price}</p>
+                    <button class="btn-preview" data-company=${product.company} data-name=${product.name} data-image=${product.image} data-price=${product.price} data-description=${product.description}>Preview</button>
                     <button class="add" data-id=${product.id}><i class="fas fa-plus"></i></button>
                 </div>
             `
         });
         document.querySelector('.product-grid').innerHTML = result;
     }
+    
+    prodDefault(products) {
+        let slides = '';
+        slides += `
+                <img src=${products[0].image} alt=${products[0].name}>
+                <div class="product-description">
+                    <h3 class="company-name">${products[0].company}</h3>
+                    <h1>${products[0].name}</h1>
+                    <h3 class="review">138 reviews</h3>
+                    <h2 class="desc-price">${products[0].price}</h2>
+                    <p class="desc">${products[0].description}</p>
+                </div>
+            `
+        document.querySelector('.product-info').innerHTML = slides;
+    }
 }
+
+
+// Product Preview
+document.querySelector('.product-grid').addEventListener('click', function(e) {
+    if(e.target.classList.contains('btn-preview')) {
+        const prodInfo = document.querySelector('.product-info');
+        prodInfo.querySelector('img').src = e.target.dataset.image;
+        prodInfo.querySelector('.company-name').textContent = e.target.dataset.company;
+        prodInfo.querySelector('h1').textContent = e.target.dataset.name;
+        prodInfo.querySelector('h2').textContent = e.target.dataset.price;
+        prodInfo.querySelector('.desc').textContent = e.target.dataset.description;
+    }
+})

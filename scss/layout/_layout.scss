@@ -104,7 +104,7 @@ main {
             box-shadow: $shadow-down-big;
 
             img {
-                width: 50%;
+                width: 80%;
                 height: auto;
                 border-radius: 10px;
                 opacity: 50%;
@@ -131,34 +131,6 @@ main {
                 .desc {
                     clear: both;
                     color: $dark;
-                }
-            }
-
-            .arrow-wrapper {
-                position: absolute;
-                bottom: 0px;
-                left: 0px;
-                right: 0px;
-                padding: 20px 40px;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                align-content: center;
-                background-color: $white;
-                border-radius: 50px;
-
-                .arrow-left {
-                    background-color: $orange-strong;
-                    color: $white;
-                    padding: 10px;
-                    border-radius: 50%;
-                    height: 20px;
-                    width: 20px;
-                    box-shadow: $shadow-down-big;
-                }
-
-                .arrow-right {
-                    @extend .arrow-left;
                 }
             }
         }
@@ -188,6 +160,15 @@ main {
 
                 .price {
                     color: $dark;
+                }
+
+                .btn-preview {
+                    color: $orange-light;
+                    padding: 0;
+                    margin-bottom: 15px; 
+                    border: none;
+                    cursor: pointer;
+                    outline: none;
                 }
 
                 .add {
