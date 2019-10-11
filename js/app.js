@@ -31,6 +31,7 @@ class ShoppingCart {
 class Products {
     constructor(ui){
         this.ui = new UI();
+        this.ui.openCloseCart();
     }
     getProducts() {
         fetch('/js/products.json')
@@ -66,7 +67,7 @@ class UI {
                     <h2>${product.name}</h2>
                     <img src=${product.image} alt=${product.name}>
                     <p class="price">${product.price}</p>
-                    <button class="btn-preview" data-company=${product.company} data-name=${product.name} data-image=${product.image} data-price=${product.price} data-description=${product.description}>Preview</button>
+                    <button class="btn-preview" data-company="${product.company}" data-name="${product.name}" data-image="${product.image}" data-price="${product.price}" data-description="${product.description}">Preview</button>
                     <button class="add" data-id=${product.id}><i class="fas fa-plus"></i></button>
                 </div>
             `
@@ -88,6 +89,21 @@ class UI {
             `
         document.querySelector('.product-info').innerHTML = slides;
     }
+
+    openCloseCart() {
+        let open = document.querySelector('.cart');
+        let close = document.querySelector('.close');
+
+        open.addEventListener('click', function(){
+            document.querySelector('.shopping-cart').style.width = '460px';
+            document.querySelector('.layer').style.width = '100%';
+        })
+
+        close.addEventListener('click', function(){
+            document.querySelector('.shopping-cart').style.width = '0px';
+            document.querySelector('.layer').style.width = '0';
+        })
+    }
 }
 
 
@@ -100,5 +116,7 @@ document.querySelector('.product-grid').addEventListener('click', function(e) {
         prodInfo.querySelector('h1').textContent = e.target.dataset.name;
         prodInfo.querySelector('h2').textContent = e.target.dataset.price;
         prodInfo.querySelector('.desc').textContent = e.target.dataset.description;
+        
     }
-})
+});
+

@@ -52,6 +52,7 @@ nav {
             display: flex;
             justify-content: flex-end;
             align-content: center;
+            cursor: pointer;
 
             i {
                 margin: auto 50px;
@@ -98,7 +99,7 @@ main {
             width: 35%;
             height: 100%;
             padding: 40px;
-            background-color: rgba(190,196,203, 0.2);
+            background-color: rgba(190,196,203, 0.3);
             border: 5px solid $white;
             border-radius: 50px;
             box-shadow: $shadow-down-big;
@@ -159,13 +160,16 @@ main {
                 }
 
                 .price {
+                    float: left;
                     color: $dark;
                 }
 
                 .btn-preview {
+                    float: right;
+                    margin-top: 15px;
+                    margin-bottom: 50px;
                     color: $orange-light;
-                    padding: 0;
-                    margin-bottom: 15px; 
+                    padding: 0; 
                     border: none;
                     cursor: pointer;
                     outline: none;
@@ -185,6 +189,41 @@ main {
             }
         }
     }
+}
+/* SHOPPING CART ================================== */
+.shopping-cart {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 999999;
+    top: 0;
+    right: 0;
+    background-color: $gray-light;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    box-shadow: $shadow-left;
+
+    .close {
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        font-size: 1.5em;
+        color: $dark;
+        margin-right: 50px;
+        cursor: pointer;
+    }
+}
+
+.layer {
+    position: absolute;
+    background-color: #5bc0eb40;
+    height: 100%;
+    width: 0;
+    top:0;
+    right:0;
+    z-index: 9999;
+    transition: 0.5s;
 }
 /* FOOTER ========================================= */
 footer {

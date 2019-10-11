@@ -19,7 +19,8 @@ html {
 body {
   margin: 0;
   position: relative;
-  height: 100%;
+  height: auto;
+  width: auto;
   background-image: url("../../images/bg-picture.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -93,7 +94,8 @@ nav {
       width: 33.33%;
       display: flex;
       justify-content: flex-end;
-      align-content: center; }
+      align-content: center;
+      cursor: pointer; }
       nav .cont-1 .cart i {
         margin: auto 50px; }
       nav .cont-1 .cart .fa-cart-plus {
@@ -124,10 +126,10 @@ main {
       width: 35%;
       height: 100%;
       padding: 40px;
-      background-color: rgba(190, 196, 203, 0.2);
+      background-color: rgba(190, 196, 203, 0.3);
       border: 5px solid #ffffff;
       border-radius: 50px;
-      box-shadow: 0 8px 8px 0 rgba(64, 67, 74, 0.2); }
+      box-shadow: 0 20px 30px 0px rgba(64, 67, 74, 0.3); }
       main .cont-2 .product-info img {
         width: 80%;
         height: auto;
@@ -165,16 +167,19 @@ main {
         padding: 8px 20px;
         background-color: #ffffff;
         border-radius: 25px;
-        box-shadow: 0 8px 8px 0 rgba(64, 67, 74, 0.2); }
+        box-shadow: 0 20px 30px 0px rgba(64, 67, 74, 0.3); }
         main .cont-2 .product-grid .product-card img {
           width: 100%;
           border-radius: 10px; }
         main .cont-2 .product-grid .product-card .price {
+          float: left;
           color: #40434a; }
         main .cont-2 .product-grid .product-card .btn-preview {
+          float: right;
+          margin-top: 15px;
+          margin-bottom: 50px;
           color: #c29a53;
           padding: 0;
-          margin-bottom: 15px;
           border: none;
           cursor: pointer;
           outline: none; }
@@ -188,6 +193,38 @@ main {
           border: none;
           border-bottom-right-radius: 25px;
           border-top-left-radius: 10px; }
+
+/* SHOPPING CART ================================== */
+.shopping-cart {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 999999;
+  top: 0;
+  right: 0;
+  background-color: #f6f8fa;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  box-shadow: 0px 0px 5px 0px rgba(64, 67, 74, 0.3); }
+  .shopping-cart .close {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    font-size: 1.5em;
+    color: #40434a;
+    margin-right: 50px;
+    cursor: pointer; }
+
+.layer {
+  position: absolute;
+  background-color: #5bc0eb40;
+  height: 100%;
+  width: 0;
+  top: 0;
+  right: 0;
+  z-index: 9999;
+  transition: 0.5s; }
 
 /* FOOTER ========================================= */
 footer {
