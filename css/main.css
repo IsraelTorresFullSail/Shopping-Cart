@@ -214,7 +214,10 @@ main {
     font-size: 1.5em;
     color: #40434a;
     margin-right: 50px;
-    cursor: pointer; }
+    cursor: pointer;
+    transition: color ease 0.3s; }
+    .shopping-cart .close:hover {
+      color: #be2a0f; }
 
 .layer {
   position: absolute;
@@ -262,6 +265,19 @@ footer {
         border-radius: 50%;
         display: flex;
         justify-content: center;
-        align-content: center; }
+        align-content: center;
+        cursor: pointer;
+        transition: color ease 0.5s; }
         footer .cont-3 .social-media .icon i {
           margin: auto; }
+        footer .cont-3 .social-media .icon:hover {
+          background-color: #ff9937; }
+          footer .cont-3 .social-media .icon:hover .fa-facebook-f, footer .cont-3 .social-media .icon:hover .fa-instagram, footer .cont-3 .social-media .icon:hover .fa-twitter {
+            color: #ffffff; }
+          footer .cont-3 .social-media .icon:hover .fa-instagram {
+            color: #ffffff; }
+          footer .cont-3 .social-media .icon:hover .fa-twitter {
+            color: #ffffff; }
+        footer .cont-3 .social-media .icon .fa-facebook-f, footer .cont-3 .social-media .icon .fa-instagram, footer .cont-3 .social-media .icon .fa-twitter {
+          color: #40434a;
+          font-size: 1.2em; }

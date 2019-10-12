@@ -212,6 +212,11 @@ main {
         color: $dark;
         margin-right: 50px;
         cursor: pointer;
+        transition: color ease 0.3s;
+
+        &:hover {
+            color: $red-blood;
+        }
     }
 }
 
@@ -270,9 +275,36 @@ footer {
                 display: flex;
                 justify-content: center;
                 align-content: center;
+                cursor: pointer;
+                transition: color ease 0.5s;
 
                 i {
                     margin: auto;
+                }
+
+                &:hover {
+                    background-color: $orange-strong;
+
+                    .fa-facebook-f {
+                        color: $white;
+                    }
+                    .fa-instagram {
+                        color: $white;
+                    }
+                    .fa-twitter {
+                        color: $white;
+                    }
+                }
+
+                .fa-facebook-f {
+                    color: $dark;
+                    font-size: 1.2em;
+                }
+                .fa-instagram {
+                    @extend .fa-facebook-f;
+                }
+                .fa-twitter {
+                    @extend .fa-facebook-f;
                 }
             }
         }
