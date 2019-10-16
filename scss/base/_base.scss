@@ -1,31 +1,20 @@
 /* DEFAULTS ====================================== */
 html {
-    background-color: $gray-light;
-    font-family: $font-stack;
-    font-size: 16px;
-    line-height: 20px;
-    font-weight: 400;
-    font-style: normal;
+    
     height: 100%;
 }
 
 body {
+    font-family: $font-stack;
+    line-height: 1.25rem !important;
+    font-weight: 400;
+    font-style: normal !important;
     margin: 0;
     position: relative;
     height: auto;
     width: auto;
-    background-image: url('../../images/bg-picture.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-}
-
-.containerDiv {
-    max-width: 1400px;
-    width: 100%;
-    min-height: 50px;
-    @extend %center-element;
+    background-color: $bg;
+    transition: all ease .3s;
 }
 
 /* TYPOGRAPHY ===================================== */
@@ -51,5 +40,5 @@ p {
 .p-small {
     font-size: $p-small;
     text-transform: uppercase;
-    line-height: 0.7em;
+    line-height: 0.75rem;
 }

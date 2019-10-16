@@ -2,75 +2,59 @@
 nav {
     background-color: $white;
     box-shadow: $shadow-down;
-    position: fixed;
-    overflow: hidden;
-    top: 0;
-    z-index: 9999;
     width: 100%;
 
-    .cont-1 {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        @extend %cont-padding;
+    .container-fluid {
+        max-width: 1400px;
+
+        @media (max-width: 991.98px){
+            padding-right: 20px !important; 
+            padding-left: 20px !important;
+        }
+
+        .navbar-collapse {
+            flex-grow: 0 !important;
+        }
 
         ul {
-            width: 33.33%;
-            list-style-type: none;
-            overflow: hidden;
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-start;
-            align-content: center;
-            padding-inline-start: 0;
-
             li {
                 padding: 0 25px;
             }
-
+    
             .current {
                 color: $orange-strong;
             }
         }
     
-        .logo {
-            width: 33.33%;
-            display: flex;
-            justify-content: center;
-            align-content: center;
+        .navbar-brand {
 
             img {
-                width: 50%;
-                max-width: 100%;
-                margin: auto;
+                width: 60%;
+                margin: auto !important;
             }
         }
     
         .cart {
             position: relative;
-            width: 33.33%;
-            display: flex;
-            justify-content: flex-end;
-            align-content: center;
             cursor: pointer;
-
+    
             i {
                 margin: auto 50px;
             }
-
+    
             .fa-cart-plus {
                 color: $orange-strong;
-                font-size: 1.5em;
+                font-size: 1.5rem;
             }
-
+    
             .number {
                 position: absolute;
-                top: 17px;
-                right: 37px;
-                padding: 6px 7px;
+                top: -15px;
+                right: 35px;
+                padding: 5px 7px;
                 background-color: $red-blood;
                 border-radius: 5px;
-
+    
                 p {
                     color: $white;
                     margin: 0 auto;
@@ -79,43 +63,55 @@ nav {
         }
     }
 }
+.navbar {
+    padding: 0rem !important;
+}
 
-
+.navbar-toggler {
+    color: $red-blood !important;
+}
 
 /* MAIN   ========================================= */
 main {
-    padding:  130px 0 60px 0;
-    
-    .cont-2 {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        @extend %cont-padding;
+    padding:  100px 0 60px 0;
+    background-image: url('../../images/bg-picture.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% auto;
+
+    .container-fluid {
+        max-width: 1400px;
+        padding: 30px;
+        margin: 0 auto;
 
         .product-info {
-            position: sticky;
             top: 130px;
             text-align: center;
-            width: 35%;
             height: 100%;
-            padding: 40px;
-            background-color: rgba(190,196,203, 0.3);
+            padding-top: 30px;
+            background-color: rgba(255,153,55, 0.2);
             border: 5px solid $white;
             border-radius: 50px;
-            box-shadow: $shadow-down-big;
+            box-shadow: $shadow-strong;
 
+            
+    
             img {
-                width: 80%;
+                width: 100%;
                 height: auto;
                 border-radius: 10px;
                 opacity: 50%;
             }
-
+    
             .product-description {
+                padding: 15px;
                 text-align: left;
                 margin-top: 40px;
                 margin-bottom: 100px;
-
+                border-radius: 10px;
+                background-color: rgba(255, 255, 255, 0.5);
+    
                 .company-name {
                     text-transform: uppercase;
                 }
@@ -135,36 +131,35 @@ main {
                 }
             }
         }
-
+    
         .product-grid {
-            width: 65%;
-            padding-left: 50px;
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-start;
-            flex-wrap: wrap;
+            margin-left: 10px;
 
+            .newpadding {
+                padding: 0 10px !important;
+             }
+    
             .product-card {
-                position: relative;
-                width: 18%;
-                margin-right: 2%;
-                margin-bottom: 2%;  
-                padding: 8px 20px;
+                position: relative; 
+                padding: 20px 20px;
                 background-color: $white;
                 border-radius: 25px;
                 box-shadow: $shadow-down-big;
-
+                height: 100%;
+    
                 img {
                     width: 100%;
                     border-radius: 10px;
                 }
-
+    
                 .price {
                     float: left;
+                    margin-top: 15px;
                     color: $dark;
                 }
-
+    
                 .btn-preview {
+                    font-size: $p-standard;
                     float: right;
                     margin-top: 15px;
                     margin-bottom: 50px;
@@ -174,100 +169,56 @@ main {
                     cursor: pointer;
                     outline: none;
                 }
-
+    
                 .add {
                     position: absolute;
                     bottom: 0;
                     right: 0;
-                    padding: 15px;
+                    padding: 12px 15px;
                     background-color: $orange-strong;
                     color: $white;
                     border: none;
                     border-bottom-right-radius: 25px;
                     border-top-left-radius: 10px;
+    
+                    .fa-plus {
+                        font-size: 0.75rem;
+                    }
                 }
             }
         }
     }
 }
-/* SHOPPING CART ================================== */
-.shopping-cart {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 999999;
-    top: 0;
-    right: 0;
-    background-color: $gray-light;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-    box-shadow: $shadow-left;
 
-    .close {
-        position: absolute;
-        top: 25px;
-        left: 25px;
-        font-size: 1.5em;
-        color: $dark;
-        margin-right: 50px;
-        cursor: pointer;
-        transition: color ease 0.3s;
-
-        &:hover {
-            color: $red-blood;
-        }
-    }
-}
-
-.layer {
-    position: absolute;
-    background-color: #5bc0eb40;
-    height: 100%;
-    width: 0;
-    top:0;
-    right:0;
-    z-index: 9999;
-    transition: 0.5s;
-}
 /* FOOTER ========================================= */
 footer {
-    position: fixed;
     left: 0;
     bottom: 0;
     background-color: $white;
     box-shadow: $shadow-up;
     width: 100%;
     margin: 0;
+    z-index: 9999;
 
-    .cont-3 {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-content: center;
-        @extend %cont-padding;
-
+    .container-fluid {
+        max-width: 1400px;
+        
         .copyright {
-            width: 50%;
+            position: relative;
             padding: 0 25px;
-            display: flex;
-            align-content: center;
 
             p {
-                margin: auto 0;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
             }
         }
 
         .social-media {
-            width: 50%;
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-end;
-            align-content: center;
             padding: 0 25px;
 
             .icon {
-                margin: 1%;
+                margin: 5px;
                 height: 40px;
                 width: 40px;
                 background-color: $gray-strong;
@@ -298,7 +249,7 @@ footer {
 
                 .fa-facebook-f {
                     color: $dark;
-                    font-size: 1.2em;
+                    font-size: 1.2rem;
                 }
                 .fa-instagram {
                     @extend .fa-facebook-f;

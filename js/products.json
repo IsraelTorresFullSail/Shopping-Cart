@@ -5,6 +5,7 @@
         "company": "Apple",
         "name": "Adapter Charger",
         "description": "Adapter charger for smartphones",
+        "review": 138,
         "price": 9.99,
         "image": "../images/product_1.jpg"
     },
@@ -13,6 +14,7 @@
         "company": "Samsung",
         "name": "Plastic Cases",
         "description": "Multicolor mobile phone plastic cases",
+        "review": 76,
         "price": 6.98,
         "image": "../images/product_2.jpg"
     },
@@ -21,6 +23,7 @@
         "company": "LG",
         "name": "Glass Protector",
         "description": "Screen glass protector for smartphones",
+        "review": 455,
         "price": 5.95,
         "image": "../images/product_3.jpg"
     },
@@ -29,6 +32,7 @@
         "company": "Sony",
         "name": "Headphones",
         "description": "White headphones for smartphones",
+        "review": 462,
         "price": 9.98,
         "image":  "../images/product_4.jpg" 
     },
@@ -37,14 +41,16 @@
         "company": "Maxell",
         "name": "Holder",
         "description": "Smartphone holder for cars",
+        "review": 35,
         "price": 3.59,
         "image":  "../images/product_5.jpg" 
     },
     {
-            "id": "6", 
+        "id": "6", 
         "company": "Belkin",
         "name": "Popsockets",
         "description": "Popsockets Expanding Phone Stand and Grip",
+        "review": 743,
         "price": 5.95,
         "image":  "../images/product_6.jpg" 
     },
@@ -53,6 +59,7 @@
         "company": "Apple",
         "name": "Portable Charger",
         "description": "Slim portable phone charger",
+        "review": 611,
         "price": 49.95,
         "image":  "../images/product_7.jpg" 
     },
@@ -61,6 +68,7 @@
         "company": "Samsung",
         "name": "VR Glasses",
         "description": "Virtual Reality glasses and game pad",
+        "review": 88,
         "price": 39.99,
         "image":  "../images/product_8.jpg" 
     },
@@ -69,6 +77,7 @@
         "company": "LG",
         "name": "Wireless charger",
         "description": "Quake Wireless Charging Pad",
+        "review": 233,
         "price": 8.49,
         "image":  "../images/product_9.jpg" 
     },
@@ -77,6 +86,7 @@
         "company": "Sony",
         "name": "Fitness Tracker",
         "description": "Inspire Activity Fitness Tracker",
+        "review": 356,
         "price": 69.99,
         "image":  "../images/product_10.jpg" 
     },
@@ -85,6 +95,7 @@
         "company": "Maxell",
         "name": "Macro Lens",
         "description": "Macro lens for smartphone camera",
+        "review": 87,
         "price": 4.93,
         "image":  "../images/product_11.jpg" 
     },
@@ -93,6 +104,7 @@
         "company": "Belkin",
         "name": "Gamepad",
         "description": "Gamepad for smartphones",
+        "review": 92,
         "price": 14.95,
         "image":  "../images/product_12.jpg" 
     }

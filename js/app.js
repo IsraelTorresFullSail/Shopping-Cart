@@ -62,13 +62,15 @@ class UI {
         let result = '';
         products.forEach( product => {
             result +=`
-                <div class="product-card">
-                    <p class="p-small">${product.company}</p>
-                    <h2>${product.name}</h2>
-                    <img src=${product.image} alt=${product.name}>
-                    <p class="price">${product.price}</p>
-                    <button class="btn-preview" data-company="${product.company}" data-name="${product.name}" data-image="${product.image}" data-price="${product.price}" data-description="${product.description}">Preview</button>
-                    <button class="add" data-id=${product.id}><i class="fas fa-plus"></i></button>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-3 newpadding">
+                    <div class="product-card ">
+                        <p class="p-small">${product.company}</p>
+                        <h2>${product.name}</h2>
+                        <img src=${product.image} alt=${product.name}>
+                        <p class="price">$${product.price}</p>
+                        <button class="btn-preview" data-company="${product.company}" data-name="${product.name}" data-image="${product.image}" data-review="${product.review} reviews" data-price="$${product.price}" data-description="${product.description}">Preview</button>
+                        <button class="add" data-id=${product.id}><i class="fas fa-plus"></i></button>
+                    </div>
                 </div>
             `
         });
@@ -78,14 +80,16 @@ class UI {
     prodDefault(products) {
         let slides = '';
         slides += `
+            <div class="container">
                 <img src=${products[0].image} alt=${products[0].name}>
                 <div class="product-description">
                     <h3 class="company-name">${products[0].company}</h3>
                     <h1>${products[0].name}</h1>
-                    <h3 class="review">138 reviews</h3>
-                    <h2 class="desc-price">${products[0].price}</h2>
+                    <h3 class="review">${products[0].review} reviews</h3>
+                    <h2 class="desc-price">$${products[0].price}</h2>
                     <p class="desc">${products[0].description}</p>
                 </div>
+            </div>
             `
         document.querySelector('.product-info').innerHTML = slides;
     }
@@ -96,12 +100,10 @@ class UI {
 
         open.addEventListener('click', function(){
             document.querySelector('.shopping-cart').style.width = '460px';
-            document.querySelector('.layer').style.width = '100%';
         })
 
         close.addEventListener('click', function(){
             document.querySelector('.shopping-cart').style.width = '0px';
-            document.querySelector('.layer').style.width = '0';
         })
     }
 }
@@ -115,6 +117,7 @@ document.querySelector('.product-grid').addEventListener('click', function(e) {
         prodInfo.querySelector('.company-name').textContent = e.target.dataset.company;
         prodInfo.querySelector('h1').textContent = e.target.dataset.name;
         prodInfo.querySelector('h2').textContent = e.target.dataset.price;
+        prodInfo.querySelector('.review').textContent = e.target.dataset.review;
         prodInfo.querySelector('.desc').textContent = e.target.dataset.description;
         
     }
