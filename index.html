@@ -28,12 +28,12 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg fixed-top" role="navigation">
-            <div class="container-fluid mx-auto">
+            <div class="container-fluid justify-content-between">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
+                    <ul class="navbar-nav">
                         <li class="nav-item active">
                             <a class="nav-link" href="#"><h2 class="current">Home</h2></a>
                         </li>
@@ -45,7 +45,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="navbar-brand justify-content-center"><img src="./images/logo.png" alt="logo image"></div>
+                <div class="logo justify-content-center"><img src="./images/logo.png" alt="logo image"></div>
                 <div class="cart">
                     <i class="fas fa-cart-plus"></i>
                     <div class="number"><p class="p-small">0</p></div>
@@ -55,13 +55,25 @@
     </header>
     <main role="main">
         <div class="container-fluid justify-content-center">
-            <div class="row mx-auto">
+            <div class="row">
                 <div class="col-6 col-xs-12 col-sm-6 col-md-4 col-lg-4 product-info sticky-top">
                     <!-- Product Preview -->
                 </div>
-                <div class="col-6 col-xs-12 col-sm-6 col-md-8 col-lg-8">
+                <div class="col-6 col-xs-12 col-sm-6 col-md-8 col-lg-8 smallpadding">
                     <div class="row product-grid">
                         <!-- Product List -->
+                    </div>
+                    <div class="container">
+                        <nav class="card-pagination"> 
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item"><a class="page-link" href=""><i class="fas fa-chevron-left"></i></a></li>
+                                <li class="page-item"><a class="page-link" href="">1</a></li>
+                                <li class="page-item"><a class="page-link current-link" href="">2</a></li>
+                                <li class="page-item"><a class="page-link" href="">3</a></li>
+                                <li class="page-item"><a class="page-link" href="">4</a></li>
+                                <li class="page-item"><a class="page-link" href=""><i class="fas fa-chevron-right"></i></a></li>
+                            </ul>
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -180,6 +192,48 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="prod-cart">
+                                <div class="row">
+                                    <div class="col-3">
+                                        <img src="./images/product_1.jpg" alt="product image">
+                                    </div>
+                                    <div class="col-5">
+                                        <div class="prod-name">
+                                            <h2>Product Name</h2>
+                                            <button class="btn-remove">Remove</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 price-cart">
+                                        <h2>$135</h2>
+                                    </div>
+                                    <div class="col-2 number-items">
+                                        <button class="add-more"><i class="fas fa-plus"></i></button>
+                                        <h3>2</h3>
+                                        <button class="remove-more"><i class="fas fa-minus"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="prod-cart">
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <img src="./images/product_1.jpg" alt="product image">
+                                        </div>
+                                        <div class="col-5">
+                                            <div class="prod-name">
+                                                <h2>Product Name</h2>
+                                                <button class="btn-remove">Remove</button>
+                                            </div>
+                                        </div>
+                                        <div class="col-2 price-cart">
+                                            <h2>$135</h2>
+                                        </div>
+                                        <div class="col-2 number-items">
+                                            <button class="add-more"><i class="fas fa-plus"></i></button>
+                                            <h3>2</h3>
+                                            <button class="remove-more"><i class="fas fa-minus"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
         </div>
         <div class="pay-info">
             <div class="container">
@@ -196,14 +250,14 @@
     <footer class="fixed-bottom" role="contentinfo">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-6 copyright">
+                <div class="col-4 copyright">
                     <ul class="nav">
                         <li class="nav-item">
                             <p>Copyright</p>
                         </li>
                     </ul>
                 </div>
-                <div class="col-6 social-media">
+                <div class="col-8 social-media">
                     <ul class="nav justify-content-end">
                         <li class="nav-item"><a href="" class="nav-link icon"><i class="fab fa-facebook-f"></i></a></li>
                         <li class="nav-item"><a href="" class="nav-link icon"><i class="fab fa-instagram"></i></a></li>

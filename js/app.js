@@ -1,4 +1,4 @@
-// Singleton Creational Design Pattern
+// --------------------------- Singleton Creational Design Pattern --------------------------- //
 window.addEventListener("load", function() {
     console.log("Page Loaded");
     // Instantiate Singleton
@@ -12,6 +12,8 @@ class ShoppingCart {
         // get all products
         const products = new Products();
         products.getProducts();
+
+        //Storage.saveProducts(products.getProducts());
     }
 
     static getInstance() {
@@ -27,11 +29,13 @@ class ShoppingCart {
     }
 }
 
-// Getting the products
+// --------------------------- Getting the Products --------------------------- //
 class Products {
-    constructor(ui){
+    constructor(ui, storage){
         this.ui = new UI();
         this.ui.openCloseCart();
+        this.ui.productPreview();
+        this.ui.addItemsToCart();
     }
     getProducts() {
         fetch('/js/products.json')
@@ -45,6 +49,7 @@ class Products {
             .then( data => {
                 this.ui.displayProducts(data);
                 this.ui.prodDefault(data);
+                Storage.saveProducts(data);
             })
             .catch( err => {
                 console.log(err);
@@ -52,11 +57,11 @@ class Products {
     }
 }
 
+// --------------------------- Display Products --------------------------- //
 // vars to use in UI
 let slideIndex = 0;
 let slideArray = [];
 
-// Display products
 class UI {
     displayProducts(products) {
         let result = '';
@@ -99,27 +104,50 @@ class UI {
         let close = document.querySelector('.close');
 
         open.addEventListener('click', function(){
-            document.querySelector('.shopping-cart').style.width = '460px';
+            //document.querySelector('.shopping-cart').style.width = '375px';
+            document.querySelector('.shopping-cart').classList.add('showCart');
         })
 
         close.addEventListener('click', function(){
-            document.querySelector('.shopping-cart').style.width = '0px';
+            //document.querySelector('.shopping-cart').style.width = '0px';
+            document.querySelector('.shopping-cart').classList.remove('showCart');
+        })
+    }
+
+    productPreview() {
+        // Product Preview
+        document.querySelector('.product-grid').addEventListener('click', function(e) {
+            if(e.target.classList.contains('btn-preview')) {
+                const prodInfo = document.querySelector('.product-info');
+                prodInfo.querySelector('img').src = e.target.dataset.image;
+                prodInfo.querySelector('.company-name').textContent = e.target.dataset.company;
+                prodInfo.querySelector('h1').textContent = e.target.dataset.name;
+                prodInfo.querySelector('h2').textContent = e.target.dataset.price;
+                prodInfo.querySelector('.review').textContent = e.target.dataset.review;
+                prodInfo.querySelector('.desc').textContent = e.target.dataset.description;
+                
+            }
+        });
+    }
+
+    addItemsToCart() {
+        const btnsAddToCart = [...document.querySelectorAll('add')];
+
+        btnsAddToCart.forEach(btns => {
+            let id = btns.dataset.id;
+            console.log(id);
+            
         })
     }
 }
 
-
-// Product Preview
-document.querySelector('.product-grid').addEventListener('click', function(e) {
-    if(e.target.classList.contains('btn-preview')) {
-        const prodInfo = document.querySelector('.product-info');
-        prodInfo.querySelector('img').src = e.target.dataset.image;
-        prodInfo.querySelector('.company-name').textContent = e.target.dataset.company;
-        prodInfo.querySelector('h1').textContent = e.target.dataset.name;
-        prodInfo.querySelector('h2').textContent = e.target.dataset.price;
-        prodInfo.querySelector('.review').textContent = e.target.dataset.review;
-        prodInfo.querySelector('.desc').textContent = e.target.dataset.description;
-        
+// --------------------------- Local Storage --------------------------- //
+class Storage {
+    static saveProducts(products) {
+        localStorage.setItem('products', JSON.stringify(products));
     }
-});
+}
+
+
+
 

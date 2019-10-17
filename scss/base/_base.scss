@@ -1,7 +1,10 @@
 /* DEFAULTS ====================================== */
 html {
-    
     height: 100%;
+
+    @media only screen and (max-width: 600px) {
+        font-size: 12px;
+    }
 }
 
 body {
@@ -21,6 +24,10 @@ body {
 h1 {
     font-size: $h1-size;
     color: $dark;
+
+    @media only screen and (max-width: 600px) {
+        font-size: 1.2rem;
+    }
 }
 
 h2 {

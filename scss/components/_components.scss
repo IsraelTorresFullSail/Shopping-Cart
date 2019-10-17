@@ -12,6 +12,11 @@
     transition: 0.5s;
     padding-top: 60px;
     box-shadow: $shadow-left;
+    transform: translate(100%);
+
+    .showCart {
+        transform: translate(0);
+    }
 
     .close {
         position: absolute;
@@ -32,14 +37,22 @@
     }
 
     .cont-cart {
-        padding: 30px !important;
+        padding: 15px !important;
+        overflow-y: scroll;
+        -ms-overflow-style: none;  // IE 10+
+        scrollbar-width: none;  // Firefox
+        &::-webkit-scrollbar { /* WebKit */
+            width: 0;
+            height: 0;
+        }
 
         .prod-cart {
             background-color: $white;
             border-radius: 25px;
             padding: 10px 15px;
             box-shadow: $shadow-strong;
-            margin-bottom: 30px;
+            margin-bottom: 15px;
+            transition: all ease .5s;
 
             .col-3 {
                 position: relative;
@@ -113,13 +126,12 @@
     }
 
     .pay-info {
-        position: absolute;
+        position: sticky;
         bottom: 0;
         right: 0;
         left: 0;
         padding: 30px 15px;
         background-color: $white;
-        height: 30%;
         border-top-left-radius: 50px;
         border-top-right-radius: 50px;
         box-shadow: $shadow-up;
