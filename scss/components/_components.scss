@@ -100,7 +100,7 @@
                     margin-bottom: 5px !important;
                 }
 
-                .add-more {
+                .add-amount {
                     color: $orange-strong;
                     border: none;
     
@@ -109,8 +109,8 @@
                     }
                 }
 
-                .remove-more {
-                    @extend .add-more;
+                .lower-amount {
+                    @extend .add-amount;
 
                     .fa-minus {
                         font-size: 0.75rem;

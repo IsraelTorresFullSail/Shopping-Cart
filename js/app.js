@@ -205,9 +205,9 @@ class UI {
                             <h2>$${i.price}</h2>
                         </div>
                         <div class="col-2 number-items">
-                            <button class="add-more"><i class="fas fa-plus" data-id=${i.id}></i></button>
+                            <button class="add-amount"><i class="fas fa-plus" data-id=${i.id}></i></button>
                             <h3>${i.amount}</h3>
-                            <button class="remove-more"><i class="fas fa-minus" data-id=${i.id}></i></button>
+                            <button class="lower-amount"><i class="fas fa-minus" data-id=${i.id}></i></button>
                         </div>
                     </div>
                 </div>
@@ -225,9 +225,37 @@ class UI {
                 let removeItem = event.target;
                 let id = removeItem.dataset.id;
 
-                cartContent.removeChild(removeItem.parentElement);
+                cartContent.removeChild(removeItem.parentElement.parentElement.parentElement.parentElement);
 
                 this.removeItem(id);
+            }
+            else if(event.target.classList.contains('fa-plus')) {
+
+                let addAmount = event.target;
+                let id = addAmount.dataset.id;
+                let tempItem = cart.find(item => item.id === id);
+                tempItem.amount = tempItem.amount + 1;
+                Storage.saveCart(cart);
+                this.setCartValues(cart);
+                addAmount.parentElement.nextElementSibling.innerText = tempItem.amount;
+            }
+            else if(event.target.classList.contains('fa-minus')) {
+
+                let lowerAmount = event.target;
+                let id = lowerAmount.dataset.id;
+                let tempItem = cart.find(item => item.id === id);
+                tempItem.amount = tempItem.amount - 1;
+                if(tempItem.amount > 0) {
+                    // Reduce amount
+                    Storage.saveCart(cart);
+                    this.setCartValues(cart);
+                    lowerAmount.parentElement.previousElementSibling.innerText = tempItem.amount;
+                }
+                else {
+                    // Remove cart item when amount is 0
+                    cartContent.removeChild(lowerAmount.parentElement.parentElement.parentElement.parentElement);
+                    this.removeItem(id);
+                }
             }
         });
     }

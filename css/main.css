@@ -361,12 +361,12 @@ footer {
         .shopping-cart .cont-cart .prod-cart .number-items h3 {
           margin-top: 5px !important;
           margin-bottom: 5px !important; }
-        .shopping-cart .cont-cart .prod-cart .number-items .add-more, .shopping-cart .cont-cart .prod-cart .number-items .remove-more {
+        .shopping-cart .cont-cart .prod-cart .number-items .add-amount, .shopping-cart .cont-cart .prod-cart .number-items .lower-amount {
           color: #ff9937;
           border: none; }
-          .shopping-cart .cont-cart .prod-cart .number-items .add-more .fa-plus, .shopping-cart .cont-cart .prod-cart .number-items .remove-more .fa-plus {
+          .shopping-cart .cont-cart .prod-cart .number-items .add-amount .fa-plus, .shopping-cart .cont-cart .prod-cart .number-items .lower-amount .fa-plus {
             font-size: 0.75rem; }
-        .shopping-cart .cont-cart .prod-cart .number-items .remove-more .fa-minus {
+        .shopping-cart .cont-cart .prod-cart .number-items .lower-amount .fa-minus {
           font-size: 0.75rem; }
   .shopping-cart .pay-info {
     position: sticky;
