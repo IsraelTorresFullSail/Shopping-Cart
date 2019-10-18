@@ -12,11 +12,6 @@
     transition: 0.5s;
     padding-top: 60px;
     box-shadow: $shadow-left;
-    transform: translate(100%);
-
-    .showCart {
-        transform: translate(0);
-    }
 
     .close {
         position: absolute;

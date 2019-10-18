@@ -30,12 +30,17 @@ class ShoppingCart {
 }
 
 // --------------------------- Getting the Products --------------------------- //
+// Cart
+let cart = [];
+let buttonsDOM = [];
+
 class Products {
     constructor(ui, storage){
         this.ui = new UI();
         this.ui.openCloseCart();
         this.ui.productPreview();
         this.ui.addItemsToCart();
+        this.ui.cartLogic();
     }
     getProducts() {
         fetch('/js/products.json')
@@ -104,13 +109,11 @@ class UI {
         let close = document.querySelector('.close');
 
         open.addEventListener('click', function(){
-            //document.querySelector('.shopping-cart').style.width = '375px';
-            document.querySelector('.shopping-cart').classList.add('showCart');
+            document.querySelector('.shopping-cart').style.width = '375px';
         })
 
         close.addEventListener('click', function(){
-            //document.querySelector('.shopping-cart').style.width = '0px';
-            document.querySelector('.shopping-cart').classList.remove('showCart');
+            document.querySelector('.shopping-cart').style.width = '0px';
         })
     }
 
@@ -131,13 +134,114 @@ class UI {
     }
 
     addItemsToCart() {
-        const btnsAddToCart = [...document.querySelectorAll('add')];
+        document.querySelector('.product-grid').addEventListener('click', (e) => {
+            if(e.target.classList.contains('add')) {
 
-        btnsAddToCart.forEach(btns => {
-            let id = btns.dataset.id;
-            console.log(id);
-            
+                let btnsAddToCart = e.target;
+                buttonsDOM = btnsAddToCart;
+
+                let id = btnsAddToCart.dataset.id;
+
+                let inCart = cart.find(item => item.id === id);
+
+                if(inCart) {
+                    btnsAddToCart.setAttribute('disabled', '');
+                }
+                else {
+                    // get product from products
+                    let cartItem = {...Storage.getProduct(id), amount:1};
+
+                    // add product the cart
+                    cart = [...cart, cartItem];
+
+                    // save cart in local storage
+                    Storage.saveCart(cart);
+
+                    // set cart values
+                    this.setCartValues(cart);
+
+                    // display cart item
+                    let itemsInCart = JSON.parse(localStorage.getItem('cart'));
+                    this.createCartItem(itemsInCart);
+                }
+            }
         })
+    }
+
+    setCartValues(cart) {
+        let tempTotal = 0;
+        let itemsTotal = 0;
+        cart.map(item => {
+            tempTotal += item.price * item.amount;
+            itemsTotal += item.amount;
+        })
+        let cartItems = document.querySelector('.number p');
+        let cartTotal = document.querySelector('.cartTotal');
+        let shipEst = document.querySelector('.shipEst');
+        let orderTotal = document.querySelector('.orderTotal');
+        
+        cartItems.innerText = itemsTotal;
+        cartTotal.innerText = `$${parseFloat(tempTotal.toFixed(2))}`;
+        shipEst.innerText = `$${parseFloat((tempTotal * 0.05).toFixed(2))}`;
+        orderTotal.innerText = `$${parseFloat((tempTotal + (tempTotal * 0.05)).toFixed(2))}`;
+    }
+
+    createCartItem(item) {
+        let result = '';
+        item.forEach( i => {
+            result += `
+                <div class='prod-cart'>
+                    <div class="row">
+                        <div class="col-3">
+                            <img src=${i.image} alt=${i.image}>
+                        </div>
+                        <div class="col-5">
+                            <div class="prod-name">
+                                <h2>${i.name}</h2>
+                                <button class="btn-remove" data-id=${i.id}>Remove</button>
+                            </div>
+                        </div>
+                        <div class="col-2 price-cart">
+                            <h2>$${i.price}</h2>
+                        </div>
+                        <div class="col-2 number-items">
+                            <button class="add-more"><i class="fas fa-plus" data-id=${i.id}></i></button>
+                            <h3>${i.amount}</h3>
+                            <button class="remove-more"><i class="fas fa-minus" data-id=${i.id}></i></button>
+                        </div>
+                    </div>
+                </div>
+            `
+        });
+        document.querySelector('.cont-cart').innerHTML = result;
+    }
+
+    cartLogic() {
+        // cart functionality
+        const cartContent = document.querySelector('.cont-cart');
+        cartContent.addEventListener('click', (event) => {
+            if(event.target.classList.contains('btn-remove')) {
+
+                let removeItem = event.target;
+                let id = removeItem.dataset.id;
+
+                cartContent.removeChild(removeItem.parentElement);
+
+                this.removeItem(id);
+            }
+        });
+    }
+
+    removeItem(id) {
+        cart = cart.filter(item => item.id !== id)
+        this.setCartValues(cart);
+        Storage.saveCart(cart);
+        let button = this.getSingleButton(id);
+        button.disabled = false;
+    }
+
+    getSingleButton(id) {
+        return buttonsDOM.find(button => button.dataset.id === id);
     }
 }
 
@@ -145,6 +249,13 @@ class UI {
 class Storage {
     static saveProducts(products) {
         localStorage.setItem('products', JSON.stringify(products));
+    }
+    static getProduct(id) {
+        let products = JSON.parse(localStorage.getItem('products'));
+        return products.find(product => product.id === id);
+    }
+    static saveCart(cart) {
+        localStorage.setItem('cart', JSON.stringify(cart));
     }
 }
 

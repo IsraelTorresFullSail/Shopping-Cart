@@ -222,6 +222,17 @@ main {
                     .fa-plus {
                         font-size: 0.75rem;
                     }
+
+                    &:disabled {
+                        cursor: not-allowed;
+                        background-color: rgba(255,153,55, 0.2);
+                    }
+                }
+
+                // To make sure nothing within the button has pointer-events,
+                // clicks inside the button will always be for the button itself.
+                .add > .fa-plus {
+                    pointer-events: none;
                 }
             }
 
