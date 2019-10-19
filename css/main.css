@@ -42,6 +42,9 @@ p {
   text-transform: uppercase;
   line-height: 0.75rem; }
 
+.p-dark {
+  color: #40434a; }
+
 /* HEADER ========================================= */
 nav {
   background-color: #ffffff;
@@ -240,6 +243,40 @@ main {
     @media only screen and (max-width: 600px) {
       main .container-fluid .smallpadding {
         padding-left: 0px !important; } }
+  main .hero-about {
+    height: 50vh;
+    min-height: 350px;
+    max-height: 893px;
+    background-image: linear-gradient(rgba(255, 153, 55, 0.2), rgba(255, 153, 55, 0.2)), url("../../images/about_hero.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 50px;
+    box-shadow: 0 12px 12px 0px rgba(64, 67, 74, 0.3);
+    border: 5px solid #ffffff;
+    border-radius: 20px; }
+  main .about-title {
+    margin-bottom: 30px; }
+  main .hero-privacy {
+    height: 50vh;
+    min-height: 350px;
+    max-height: 893px;
+    background-image: linear-gradient(rgba(255, 153, 55, 0.2), rgba(255, 153, 55, 0.2)), url("../../images/privacy_hero.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 50px;
+    box-shadow: 0 12px 12px 0px rgba(64, 67, 74, 0.3);
+    border: 5px solid #ffffff;
+    border-radius: 20px; }
+  main .privacy-title {
+    margin-bottom: 30px; }
 
 /* FOOTER ========================================= */
 footer {
@@ -458,6 +495,35 @@ footer {
         border-radius: 12px; }
         .modalForm .container-fluid .modal-content input::placeholder {
           color: #bec4cb; }
+        .modalForm .container-fluid .modal-content input:required {
+          border: 1px solid red; }
+        .modalForm .container-fluid .modal-content input:focus:required {
+          outline: none; }
+      .modalForm .container-fluid .modal-content span {
+        display: none; }
+        .modalForm .container-fluid .modal-content span .error-1, .modalForm .container-fluid .modal-content span .error-2 {
+          position: relative;
+          display: block;
+          width: 15.625rem;
+          margin: -2.5rem auto 1rem auto;
+          padding: .6rem;
+          font-size: 80%;
+          text-align: center;
+          background-color: #faa191;
+          border-radius: .5rem;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box; }
+          .modalForm .container-fluid .modal-content span .error-1:before, .modalForm .container-fluid .modal-content span .error-2:before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: 20px;
+            border: 4px solid #faa191;
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg); }
       .modalForm .container-fluid .modal-content .lineDivider {
         width: 100%;
         height: 0%;

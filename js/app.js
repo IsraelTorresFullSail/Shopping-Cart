@@ -35,14 +35,18 @@ let buttonsDOM = [];
 class Products {
     constructor(ui, storage){
         this.ui = new UI();
+        this.validation = new Validation();
+
         this.ui.openCloseCart();
         this.ui.productPreview();
         this.ui.addItemsToCart();
         this.ui.cartLogic();
         this.ui.displayModalForm();
+
+        this.validation.formValidation();
     }
     getProducts() {
-        fetch('/js/products.json')
+        fetch('https://israeltorresfullsail.github.io/products.github.io/products.json')
             .then( response => {
                 if(response.ok) {
                     return response.json();
@@ -305,6 +309,128 @@ class Storage {
     }
     static saveCart(cart) {
         localStorage.setItem('cart', JSON.stringify(cart));
+    }
+}
+
+// --------------------------- Form Validation --------------------------- //
+class Validation {
+    // Form Validation
+    formValidation() {
+        let form  = document.querySelector('#paymentForm');
+
+        let firstname = document.querySelector('#firstname');
+        let lastname = document.querySelector('#lastname');
+        let email = document.querySelector('#email');
+        let phone = document.querySelector('#phone');
+        let cardNumber = document.querySelector('#cardNumber');
+        let nameOnCard = document.querySelector('#nameOnCard');
+        let expiryDate = document.querySelector('#expiryDate');
+        let cvvCode = document.querySelector('#cvvCode');
+
+        let paymentBottom = document.querySelector('.paymentBottom');
+
+        firstname.addEventListener('input', function (event) {
+            if (!event.target.value.length) {
+                firstname.setAttribute('required', '');
+                paymentBottom.setAttribute('disabled', '');
+            }
+            else {
+                firstname.removeAttribute('required');
+                paymentBottom.removeAttribute('disabled');
+            }
+        }, false);
+        firstname.addEventListener('blur', function (event) {
+            if (!event.target.value.length) {
+                if (!form.querySelector('.error-1')){
+                    form.querySelector('span:nth-of-type(1)').style.display = 'block';
+                    form.querySelector('span:nth-of-type(1)').style.color = 'red';
+                    form.querySelector('span:nth-of-type(1)').setAttribute('class', 'error-1');
+                }
+                firstname.setAttribute('required', '');
+                paymentBottom.setAttribute('disabled', '');
+            }
+            else {
+                form.querySelector('span:nth-of-type(1)').style.display = 'none';
+                form.querySelector('span:nth-of-type(1)').removeAttribute('class');
+                firstname.removeAttribute('required');
+                paymentBottom.removeAttribute('disabled');
+            }
+        }, false);
+
+        lastname.addEventListener('input', function (event) {
+            if (!event.target.value.length) {
+                lastname.setAttribute('required', '');
+                paymentBottom.setAttribute('disabled', '');
+            }
+            else {
+                lastname.removeAttribute('required');
+                paymentBottom.removeAttribute('disabled');
+            }
+        }, false);
+        lastname.addEventListener('blur', function (event) {
+            if (!event.target.value.length) {
+                if (!form.querySelector('.error-2')){
+                    form.querySelector('span:nth-of-type(2)').style.display = 'block';
+                    form.querySelector('span:nth-of-type(2)').style.color = 'red';
+                    form.querySelector('span:nth-of-type(2)').setAttribute('class', 'error-2');
+                }
+                lastname.setAttribute('required', '');
+                paymentBottom.setAttribute('disabled', '');
+            }
+            else {
+                form.querySelector('span:nth-of-type(2)').style.display = 'none';
+                form.querySelector('span:nth-of-type(2)').removeAttribute('class');
+                lastname.removeAttribute('required');
+                paymentBottom.removeAttribute('disabled');
+            }
+        }, false);
+
+        // email.addEventListener('input', function (event) {
+        //     if (email.validity.valid) {
+        //         error.innerHTML = ''; 
+        //         error.className = 'error'; 
+        //     }
+        // }, false);
+        // phone.addEventListener('input', function (event) {
+        //     if (phone.validity.valid) {
+        //         error.innerHTML = ''; 
+        //         error.className = 'error'; 
+        //     }
+        // }, false);
+        // cardNumber.addEventListener('input', function (event) {
+        //     if (cardNumber.validity.valid) {
+        //         error.innerHTML = ''; 
+        //         error.className = 'error'; 
+        //     }
+        // }, false);
+        // nameOnCard.addEventListener('input', function (event) {
+        //     if (nameOnCard.validity.valid) {
+        //         error.innerHTML = ''; 
+        //         error.className = 'error'; 
+        //     }
+        // }, false);
+        // expiryDate.addEventListener('input', function (event) {
+        //     if (expiryDate.validity.valid) {
+        //         error.innerHTML = ''; 
+        //         error.className = 'error'; 
+        //     }
+        // }, false);
+        // cvvCode.addEventListener('input', function (event) {
+        //     if (cvvCode.validity.valid) {
+        //         error.innerHTML = ''; 
+        //         error.className = 'error'; 
+        //     }
+        // }, false);
+
+        form.addEventListener('submit', function (event) {
+        if (!form.validity.valid) {
+            event.preventDefault();
+            paymentBottom.setAttribute('disabled', '');
+        }
+        else {
+            paymentBottom.removeAttribute('disabled');
+        }
+        }, false);
     }
 }
 
