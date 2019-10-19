@@ -78,6 +78,79 @@
                 </div>
             </div>
         </div>
+        <!-- Modal Form -->
+        <div class="modalForm" role="complementary">
+            <div class="closeModal">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <!-- Modal content -->
+                    <div class="col-12 col-xs-10 col-md-6 col-lg-6 modal-content">
+                        <div class="row mb-5 cards-wrapper">
+                            <div class="col-3"><img src="./images/mastercard.png" alt="MasterCard card image"></div>
+                            <div class="col-3"><img src="./images/amexcard.png" alt="American Express card image"></div>
+                            <div class="col-3"><img src="./images/visacard.png" alt="Visa card image"></div>
+                            <div class="col-3"><img src="./images/dicovercard.png" alt="Discover card image"></div>
+                        </div>
+                        <form id="paymentForm" role="form">
+                            <div class="row justify-content-between mb-3">
+                                <div class="col">
+                                    <label for="firstname">First *</label>
+                                    <input type="text" name="firstname" id="firstname" placeholder="First" required>
+                                </div>
+                                <div class="col">
+                                    <label for="lastname">Last *</label>
+                                    <input type="text" name="lastname" id="lastname" placeholder="Last" required>
+                                </div>
+                            </div>
+                            <div class="row justify-content-between mb-4">
+                                <div class="col">
+                                    <label for="email">Email *</label>
+                                    <input type="email" name="emal" id="emal" placeholder="email@domain.com" required>
+                                </div>
+                                <div class="col">
+                                    <label for="phone">Phone *</label>
+                                    <input type="number" name="phone" id="phone" placeholder="(123) 456-7890" required>
+                                </div>
+                            </div>
+                            <div class="row mb-4">
+                                <div class="col">
+                                    <div class="lineDivider"></div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <label for="cardNumber">Card Number *</label>
+                                    <input type="number" name="cardNumber" id="cardNumber" placeholder="1234 5678 9012 3456" required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <label for="nameOnCard">Name on Card *</label>
+                                    <input type="text" name="nameOnCard" id="nameOnCard" placeholder="Enter the displyed in card" required>
+                                </div>
+                            </div>
+                            <div class="row justify-content-between mb-4">
+                                <div class="col">
+                                    <label for="expiryDate">Expiry Date *</label>
+                                    <input type="date" name="expiryDate" id="expiryDate" placeholder="MM / YY" required>
+                                </div>
+                                <div class="col">
+                                    <label for="cvvCode">CVV Code *</label>
+                                    <input type="number" name="cvvCode" id="cvvCode" placeholder="Enter CVV code" required>
+                                </div>
+                            </div>
+                            <div class="row mb-5">
+                                <div class="col">
+                                    <button class="paymentBottom" type="button" disabled>Pay</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
     <section class="shopping-cart">
         <div class="close">
@@ -118,7 +191,7 @@
                         <h1 class="orderTotal">0</h1>
                     </div>
                 </div>
-                <button class="checkout">Checkout</button>
+                <button class="checkout" disabled>Checkout</button>
             </div>
         </div>
     </section>

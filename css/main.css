@@ -96,6 +96,7 @@ nav {
 
 /* MAIN   ========================================= */
 main {
+  position: relative;
   padding: 100px 0 60px 0;
   background-image: url("../../images/bg-picture.jpg");
   background-position: center;
@@ -399,3 +400,79 @@ footer {
       border-radius: 50px;
       width: 100%;
       box-shadow: 0 20px 30px 0px rgba(64, 67, 74, 0.3); }
+      .shopping-cart .pay-info .checkout:disabled {
+        cursor: not-allowed;
+        background-color: rgba(255, 153, 55, 0.2); }
+
+/* MODAL FORM ======================================= */
+.modalForm {
+  position: relative;
+  display: none;
+  position: fixed;
+  z-index: 9999999;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: #f6f8fa; }
+  .modalForm .closeModal {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    font-size: 1.5em;
+    color: #40434a;
+    margin-right: 50px;
+    cursor: pointer;
+    transition: color ease 0.3s; }
+    .modalForm .closeModal:hover {
+      color: #be2a0f; }
+  .modalForm .container-fluid {
+    max-width: 1400px;
+    padding-top: 30px;
+    margin: 0 auto; }
+    .modalForm .container-fluid .row {
+      padding-left: 0px !important; }
+    .modalForm .container-fluid .modal-content {
+      padding: 30px;
+      background-color: rgba(255, 153, 55, 0.2);
+      border: 5px solid #ffffff;
+      border-radius: 50px;
+      box-shadow: 0 12px 12px 0px rgba(64, 67, 74, 0.3); }
+      .modalForm .container-fluid .modal-content .cards-wrapper {
+        text-align: center; }
+        .modalForm .container-fluid .modal-content .cards-wrapper .col-3 {
+          padding-left: 0px !important; }
+      .modalForm .container-fluid .modal-content label {
+        display: block;
+        font-size: 1rem;
+        color: #40434a; }
+      .modalForm .container-fluid .modal-content input {
+        width: 100%;
+        padding: 15px;
+        background-color: #ffffff;
+        color: #40434a;
+        font-size: 1rem;
+        border: 1px solid #bec4cb;
+        border-radius: 12px; }
+        .modalForm .container-fluid .modal-content input::placeholder {
+          color: #bec4cb; }
+      .modalForm .container-fluid .modal-content .lineDivider {
+        width: 100%;
+        height: 0%;
+        border: 1px solid #ffffff; }
+      .modalForm .container-fluid .modal-content .paymentBottom {
+        padding: 10px 0;
+        background-color: #ff9937;
+        color: #ffffff;
+        font-size: 1rem;
+        text-transform: uppercase;
+        text-align: center;
+        border: none;
+        border-radius: 50px;
+        width: 100%;
+        box-shadow: 0 20px 30px 0px rgba(64, 67, 74, 0.3); }
+        .modalForm .container-fluid .modal-content .paymentBottom:disabled {
+          cursor: not-allowed;
+          background-color: rgba(255, 153, 55, 0.2); }

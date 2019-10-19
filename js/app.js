@@ -12,13 +12,11 @@ class ShoppingCart {
         // get all products
         const products = new Products();
         products.getProducts();
-
-        //Storage.saveProducts(products.getProducts());
     }
 
     static getInstance() {
         // Is there an instance variable attached to the class?
-        // If SO! Don't Create. If NOT, then it's ok tto Create!
+        // If SO! Don't Create. If NOT, then it's ok to Create!
         if (!ShoppingCart._instance) {
             ShoppingCart._instance = new ShoppingCart();
             return ShoppingCart._instance;
@@ -41,6 +39,7 @@ class Products {
         this.ui.productPreview();
         this.ui.addItemsToCart();
         this.ui.cartLogic();
+        this.ui.displayModalForm();
     }
     getProducts() {
         fetch('/js/products.json')
@@ -138,32 +137,33 @@ class UI {
             if(e.target.classList.contains('add')) {
 
                 let btnsAddToCart = e.target;
-                buttonsDOM = btnsAddToCart;
 
+                // Disable button after add product to cart
+                buttonsDOM.push(btnsAddToCart);
+                btnsAddToCart.setAttribute('disabled', '');
+
+                // Set id
                 let id = btnsAddToCart.dataset.id;
+                
+                // get product from products
+                let cartItem = {...Storage.getProduct(id), amount:1};
 
-                let inCart = cart.find(item => item.id === id);
+                // add product the cart
+                cart = [...cart, cartItem];
 
-                if(inCart) {
-                    btnsAddToCart.setAttribute('disabled', '');
-                }
-                else {
-                    // get product from products
-                    let cartItem = {...Storage.getProduct(id), amount:1};
+                // enable checkout button
+                let btnCheckout = document.querySelector('.checkout');
+                btnCheckout.disabled = false;
 
-                    // add product the cart
-                    cart = [...cart, cartItem];
+                // save cart in local storage
+                Storage.saveCart(cart); 
 
-                    // save cart in local storage
-                    Storage.saveCart(cart);
+                // set cart values
+                this.setCartValues(cart);
 
-                    // set cart values
-                    this.setCartValues(cart);
-
-                    // display cart item
-                    let itemsInCart = JSON.parse(localStorage.getItem('cart'));
-                    this.createCartItem(itemsInCart);
-                }
+                // display cart item
+                let itemsInCart = JSON.parse(localStorage.getItem('cart'));
+                this.createCartItem(itemsInCart);
             }
         })
     }
@@ -266,10 +266,31 @@ class UI {
         Storage.saveCart(cart);
         let button = this.getSingleButton(id);
         button.disabled = false;
+
+        // Disable button checkout when cart is empty
+        let btnCheckout = document.querySelector('.checkout');
+        if(cart.length == 0) {
+            btnCheckout.setAttribute('disabled', '');
+        }
     }
 
     getSingleButton(id) {
         return buttonsDOM.find(button => button.dataset.id === id);
+    }
+
+    // Display Modal Form
+    displayModalForm() {
+        let modal = document.querySelector('.modalForm');
+        let btnCheckout = document.querySelector('.checkout');
+        let closeModal = document.querySelector('.closeModal');
+
+        btnCheckout.addEventListener('click', function() {
+            modal.style.display = 'block';
+        });
+
+        closeModal.addEventListener('click', function() {
+            modal.style.display ='none';
+        });
     }
 }
 
