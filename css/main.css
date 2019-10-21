@@ -495,35 +495,10 @@ footer {
         border-radius: 12px; }
         .modalForm .container-fluid .modal-content input::placeholder {
           color: #bec4cb; }
-        .modalForm .container-fluid .modal-content input:required {
-          border: 1px solid red; }
         .modalForm .container-fluid .modal-content input:focus:required {
           outline: none; }
-      .modalForm .container-fluid .modal-content span {
-        display: none; }
-        .modalForm .container-fluid .modal-content span .error-1, .modalForm .container-fluid .modal-content span .error-2 {
-          position: relative;
-          display: block;
-          width: 15.625rem;
-          margin: -2.5rem auto 1rem auto;
-          padding: .6rem;
-          font-size: 80%;
-          text-align: center;
-          background-color: #faa191;
-          border-radius: .5rem;
-          -moz-box-sizing: border-box;
-          box-sizing: border-box; }
-          .modalForm .container-fluid .modal-content span .error-1:before, .modalForm .container-fluid .modal-content span .error-2:before {
-            content: '';
-            position: absolute;
-            top: -4px;
-            left: 20px;
-            border: 4px solid #faa191;
-            -webkit-transform: rotate(-45deg);
-            -moz-transform: rotate(-45deg);
-            -o-transform: rotate(-45deg);
-            -ms-transform: rotate(-45deg);
-            transform: rotate(-45deg); }
+      .modalForm .container-fluid .modal-content .error {
+        border: 1px solid red !important; }
       .modalForm .container-fluid .modal-content .lineDivider {
         width: 100%;
         height: 0%;

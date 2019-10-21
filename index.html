@@ -32,7 +32,7 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fas fa-bars"></i>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse order-1 order-md-0" id="navbarSupportedContent">
                     <ul class="navbar-nav">
                         <li class="nav-item active">
                             <a class="nav-link" href="index.html"><h2 class="current">Home</h2></a>
@@ -97,25 +97,21 @@
                             <div class="row justify-content-between mb-3">
                                 <div class="col">
                                     <label for="firstname">First *</label>
-                                    <input type="text" name="firstname" id="firstname" placeholder="First">
-                                    <span aria-live="polite">Please, enter your First Name here!</span>
+                                    <input type="text" name="firstname" id="firstname" placeholder="First" required>
                                 </div>
                                 <div class="col">
                                     <label for="lastname">Last *</label>
-                                    <input type="text" name="lastname" id="lastname" placeholder="Last">
-                                    <span aria-live="polite">Please, enter your Last Name here!</span>
+                                    <input type="text" name="lastname" id="lastname" placeholder="Last" required>
                                 </div>
                             </div>
                             <div class="row justify-content-between mb-4">
                                 <div class="col">
                                     <label for="email">Email *</label>
-                                    <input type="email" name="emal" id="emal" placeholder="email@domain.com">
-                                    <span aria-live="polite">Please, complete the required field</span>
+                                    <input type="email" name="email" id="email" placeholder="email@domain.com" required>
                                 </div>
                                 <div class="col">
                                     <label for="phone">Phone *</label>
-                                    <input type="number" name="phone" id="phone" placeholder="(123) 456-7890" minlength="10" maxlength="10">
-                                    <span aria-live="polite">Please, complete the required field</span>
+                                    <input type="number" name="phone" id="phone" placeholder="(123) 456-7890" minlength="10" maxlength="10" required>
                                 </div>
                             </div>
                             <div class="row mb-4">
@@ -126,27 +122,23 @@
                             <div class="row mb-3">
                                 <div class="col">
                                     <label for="cardNumber">Card Number *</label>
-                                    <input type="number" name="cardNumber" id="cardNumber" placeholder="1234 5678 9012 3456" minlength="16" maxlength="16">
-                                    <span aria-live="polite">Please, complete the required field</span>
+                                    <input type="number" name="cardNumber" id="cardNumber" placeholder="1234 5678 9012 3456" minlength="16" maxlength="16" required>
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <div class="col">
                                     <label for="nameOnCard">Name on Card *</label>
-                                    <input type="text" name="nameOnCard" id="nameOnCard" placeholder="Enter the displyed in card">
-                                    <span aria-live="polite">Please, complete the required field</span>
+                                    <input type="text" name="nameOnCard" id="nameOnCard" placeholder="Enter the displyed in card" required>
                                 </div>
                             </div>
                             <div class="row justify-content-between mb-4">
                                 <div class="col">
                                     <label for="expiryDate">Expiry Date *</label>
-                                    <input type="date" name="expiryDate" id="expiryDate" placeholder="MM / YY">
-                                    <span aria-live="polite">Please, complete the required field</span>
+                                    <input type="date" name="expiryDate" id="expiryDate" placeholder="MM / YY" required>
                                 </div>
                                 <div class="col">
                                     <label for="cvvCode">CVV Code *</label>
-                                    <input type="number" name="cvvCode" id="cvvCode" placeholder="Enter CVV code" minlength="3" maxlength="4">
-                                    <span aria-live="polite">Please, complete the required field</span>
+                                    <input type="number" name="cvvCode" id="cvvCode" placeholder="Enter CVV code" minlength="3" maxlength="4" required>
                                 </div>
                             </div>
                             <div class="row mb-3">
