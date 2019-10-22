@@ -101,7 +101,7 @@ nav {
 main {
   position: relative;
   padding: 100px 0 60px 0;
-  background-image: url("../../images/bg-picture.jpg");
+  background-image: url("https://israeltorresfullsail.github.io/Shopping-Cart/images/bg-picture.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -247,7 +247,7 @@ main {
     height: 50vh;
     min-height: 350px;
     max-height: 893px;
-    background-image: linear-gradient(rgba(255, 153, 55, 0.2), rgba(255, 153, 55, 0.2)), url("../../images/about_hero.jpg");
+    background-image: linear-gradient(rgba(255, 153, 55, 0.2), rgba(255, 153, 55, 0.2)), url("https://israeltorresfullsail.github.io/Shopping-Cart/images/about_hero.jpg");
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -264,7 +264,7 @@ main {
     height: 50vh;
     min-height: 350px;
     max-height: 893px;
-    background-image: linear-gradient(rgba(255, 153, 55, 0.2), rgba(255, 153, 55, 0.2)), url("../../images/privacy_hero.jpg");
+    background-image: linear-gradient(rgba(255, 153, 55, 0.2), rgba(255, 153, 55, 0.2)), url("https://israeltorresfullsail.github.io/Shopping-Cart/images/privacy_hero.jpg");
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

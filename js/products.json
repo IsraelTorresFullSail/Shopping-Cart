@@ -7,7 +7,7 @@
         "description": "Adapter charger for smartphones",
         "review": 138,
         "price": 9.99,
-        "image": "../images/product_1.jpg"
+        "image": "https://israeltorresfullsail.github.io/Shopping-Cart/images/product_1.jpg"
     },
     {
         "id": "2",
@@ -16,7 +16,7 @@
         "description": "Multicolor mobile phone plastic cases",
         "review": 76,
         "price": 6.98,
-        "image": "../images/product_2.jpg"
+        "image": "https://israeltorresfullsail.github.io/Shopping-Cart/images/product_2.jpg"
     },
     {
         "id": "3",
@@ -25,7 +25,7 @@
         "description": "Screen glass protector for smartphones",
         "review": 455,
         "price": 5.95,
-        "image": "../images/product_3.jpg"
+        "image": "https://israeltorresfullsail.github.io/Shopping-Cart/images/product_3.jpg"
     },
     {
         "id": "4",
@@ -34,7 +34,7 @@
         "description": "White headphones for smartphones",
         "review": 462,
         "price": 9.98,
-        "image":  "../images/product_4.jpg" 
+        "image":  "https://israeltorresfullsail.github.io/Shopping-Cart/images/product_4.jpg" 
     },
     {
         "id": "5",
@@ -43,7 +43,7 @@
         "description": "Smartphone holder for cars",
         "review": 35,
         "price": 3.59,
-        "image":  "../images/product_5.jpg" 
+        "image":  "https://israeltorresfullsail.github.io/Shopping-Cart/images/product_5.jpg" 
     },
     {
         "id": "6", 
@@ -52,7 +52,7 @@
         "description": "Popsockets Expanding Phone Stand and Grip",
         "review": 743,
         "price": 5.95,
-        "image":  "../images/product_6.jpg" 
+        "image":  "https://israeltorresfullsail.github.io/Shopping-Cart/images/product_6.jpg" 
     },
     {
         "id": "7",
@@ -61,7 +61,7 @@
         "description": "Slim portable phone charger",
         "review": 611,
         "price": 49.95,
-        "image":  "../images/product_7.jpg" 
+        "image":  "https://israeltorresfullsail.github.io/Shopping-Cart/images/product_7.jpg" 
     },
     {
         "id": "8",
@@ -70,7 +70,7 @@
         "description": "Virtual Reality glasses and game pad",
         "review": 88,
         "price": 39.99,
-        "image":  "../images/product_8.jpg" 
+        "image":  "https://israeltorresfullsail.github.io/Shopping-Cart/images/product_8.jpg" 
     },
     {
         "id": "9",
@@ -79,7 +79,7 @@
         "description": "Quake Wireless Charging Pad",
         "review": 233,
         "price": 8.49,
-        "image":  "../images/product_9.jpg" 
+        "image":  "https://israeltorresfullsail.github.io/Shopping-Cart/images/product_9.jpg" 
     },
     {
         "id": "10", 
@@ -88,7 +88,7 @@
         "description": "Inspire Activity Fitness Tracker",
         "review": 356,
         "price": 69.99,
-        "image":  "../images/product_10.jpg" 
+        "image":  "https://israeltorresfullsail.github.io/Shopping-Cart/images/product_10.jpg" 
     },
     {
         "id": "11",
@@ -97,7 +97,7 @@
         "description": "Macro lens for smartphone camera",
         "review": 87,
         "price": 4.93,
-        "image":  "../images/product_11.jpg" 
+        "image":  "https://israeltorresfullsail.github.io/Shopping-Cart/images/product_11.jpg" 
     },
     {
         "id": "12",
@@ -106,6 +106,6 @@
         "description": "Gamepad for smartphones",
         "review": 92,
         "price": 14.95,
-        "image":  "../images/product_12.jpg" 
+        "image":  "https://israeltorresfullsail.github.io/Shopping-Cart/images/product_12.jpg" 
     }
 ]
