@@ -47,7 +47,7 @@ class Products {
         this.validation.formValidation();
     }
     getProducts() {
-        fetch('/js/products.json')
+        fetch('./js/products.json')
             .then( response => {
                 if(response.ok) {
                     return response.json();
