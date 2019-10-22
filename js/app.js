@@ -47,7 +47,7 @@ class Products {
         this.validation.formValidation();
     }
     getProducts() {
-        fetch('https://israeltorresfullsail.github.io/products.github.io/products.json')
+        fetch('https://israeltorresfullsail.github.io/products.github.io/products.json?raw=true')
             .then( response => {
                 if(response.ok) {
                     return response.json();
