@@ -187,6 +187,7 @@ main {
           float: right;
           margin-top: 15px;
           margin-bottom: 50px;
+          background-color: transparent;
           color: #c29a53;
           padding: 0;
           border: none;
@@ -209,9 +210,6 @@ main {
             background-color: rgba(255, 153, 55, 0.2); }
         main .container-fluid .product-grid .product-card .add > .fa-plus {
           pointer-events: none; }
-      @media only screen and (max-width: 600px) {
-        main .container-fluid .product-grid {
-          margin-left: -10px !important; } }
     main .container-fluid .card-pagination {
       background-color: transparent !important;
       box-shadow: none !important;
@@ -384,6 +382,7 @@ footer {
       .shopping-cart .cont-cart .prod-cart .btn-remove {
         font-size: 0.875rem;
         color: #c29a53;
+        background-color: transparent;
         padding: 0;
         border: none;
         cursor: pointer;
@@ -401,7 +400,8 @@ footer {
           margin-bottom: 5px !important; }
         .shopping-cart .cont-cart .prod-cart .number-items .add-amount, .shopping-cart .cont-cart .prod-cart .number-items .lower-amount {
           color: #ff9937;
-          border: none; }
+          border: none;
+          background-color: transparent; }
           .shopping-cart .cont-cart .prod-cart .number-items .add-amount .fa-plus, .shopping-cart .cont-cart .prod-cart .number-items .lower-amount .fa-plus {
             font-size: 0.75rem; }
         .shopping-cart .cont-cart .prod-cart .number-items .lower-amount .fa-minus {
@@ -481,7 +481,10 @@ footer {
         text-align: center; }
         .modalForm .container-fluid .modal-content .cards-wrapper .col-3 {
           padding-left: 0px !important; }
+        .modalForm .container-fluid .modal-content .cards-wrapper img {
+          width: 100%; }
       .modalForm .container-fluid .modal-content label {
+        margin-top: 15px;
         display: block;
         font-size: 1rem;
         color: #40434a; }
@@ -517,3 +520,6 @@ footer {
         .modalForm .container-fluid .modal-content .paymentBottom:disabled {
           cursor: not-allowed;
           background-color: rgba(255, 153, 55, 0.2); }
+      @media only screen and (max-width: 480px) {
+        .modalForm .container-fluid .modal-content {
+          margin-left: -10px !important; } }

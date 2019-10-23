@@ -76,6 +76,7 @@
             .btn-remove {
                 font-size: $p-standard;
                 color: $orange-light;
+                background-color: transparent;
                 padding: 0; 
                 border: none;
                 cursor: pointer;
@@ -103,6 +104,7 @@
                 .add-amount {
                     color: $orange-strong;
                     border: none;
+                    background-color: transparent;
     
                     .fa-plus {
                         font-size: 0.75rem;
@@ -217,9 +219,14 @@
                 .col-3 {
                     padding-left: 0px !important;
                 }
+
+                img {
+                    width: 100%;
+                }
             }
 
             label {
+                margin-top: 15px;
                 display: block;
                 font-size: $h3-size;
                 color: $dark;
@@ -268,6 +275,10 @@
                     cursor: not-allowed;
                     background-color: rgba(255,153,55, 0.2);
                 }
+            }
+
+            @media only screen and (max-width: 480px) {
+                margin-left: -10px !important;
             }
         }
     }

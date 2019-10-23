@@ -41,7 +41,7 @@ class Products {
         this.ui.productPreview();
         this.ui.addItemsToCart();
         this.ui.cartLogic();
-        //this.ui.setupApp();
+        this.ui.setupApp();
         this.ui.displayModalForm();
 
         this.validation.formValidation();
@@ -72,6 +72,7 @@ let slideIndex = 0;
 let slideArray = [];
 
 class UI {
+    // Display list of products
     displayProducts(products) {
         let result = '';
         products.forEach( product => {
@@ -91,6 +92,7 @@ class UI {
         document.querySelector('.product-grid').innerHTML = result;
     }
     
+    // Display default product on proview container
     prodDefault(products) {
         let slides = '';
         slides += `
@@ -108,6 +110,7 @@ class UI {
         document.querySelector('.product-info').innerHTML = slides;
     }
 
+    // Open and close cart
     openCloseCart() {
         let open = document.querySelector('.cart');
         let close = document.querySelector('.close');
@@ -121,6 +124,7 @@ class UI {
         })
     }
 
+    // Display product in preview container when clic in preview button
     productPreview() {
         // Product Preview
         document.querySelector('.product-grid').addEventListener('click', function(e) {
@@ -137,6 +141,7 @@ class UI {
         });
     }
 
+    // Add item to the cart and values
     addItemsToCart() {
         document.querySelector('.product-grid').addEventListener('click', (e) => {
             if(e.target.classList.contains('add')) {
@@ -169,10 +174,24 @@ class UI {
                 // display cart item
                 let itemsInCart = JSON.parse(localStorage.getItem('cart'));
                 this.createCartItem(itemsInCart);
+
+
+                // verify if the item already exist in the cart   // TODO:
+                // itemsInCart.find(item => {
+                //     if(item.id !== btnsAddToCart.dataset.id) {
+                //         this.createCartItem(itemsInCart);
+                        
+                //     }
+                //     else {
+                //         alert('This item already exist in the cart');
+                //     }
+                // });
+                
             }
         })
     }
 
+    // Calculate cart values
     setCartValues(cart) {
         let tempTotal = 0;
         let itemsTotal = 0;
@@ -191,6 +210,7 @@ class UI {
         orderTotal.innerText = `$${parseFloat((tempTotal + (tempTotal * 0.05)).toFixed(2))}`;
     }
 
+    // Create cart item
     createCartItem(item) {
         let result = '';
         item.forEach( i => {
@@ -221,8 +241,8 @@ class UI {
         document.querySelector('.cont-cart').innerHTML = result;
     }
 
+    // Cart functionalities
     cartLogic() {
-        // cart functionality
         const cartContent = document.querySelector('.cont-cart');
         cartContent.addEventListener('click', (event) => {
             if(event.target.classList.contains('btn-remove')) {
@@ -265,8 +285,9 @@ class UI {
         });
     }
 
+    // Remove item from the cart
     removeItem(id) {
-        cart = cart.filter(item => item.id !== id)
+        cart = cart.filter(item => item.id !== id);
         this.setCartValues(cart);
         Storage.saveCart(cart);
         let button = this.getSingleButton(id);
@@ -277,18 +298,28 @@ class UI {
         if(cart.length == 0) {
             btnCheckout.setAttribute('disabled', '');
         }
+        else {
+            btnCheckout.removeAttribute('disabled');
+        }
     }
 
+    // Populate cart and cart values when refresh the browser
     setupApp() {
         cart = Storage.getCart();
         this.setCartValues(cart);
-        this.populateCart(cart);
+        this.createCartItem(cart);
+
+        let btnCheckout = document.querySelector('.checkout');
+        if(cart.length == 0) {
+            btnCheckout.setAttribute('disabled', '');
+        }
+        else {
+            btnCheckout.removeAttribute('disabled');
+        }
+
     }
 
-    populateCart(cart) {
-        cart.forEach(item => this.createCartItem(item));
-    }
-
+    // Enable add button when delete item from the cart
     getSingleButton(id) {
         return buttonsDOM.find(button => button.dataset.id === id);
     }
@@ -300,7 +331,13 @@ class UI {
         let closeModal = document.querySelector('.closeModal');
 
         btnCheckout.addEventListener('click', function() {
-            modal.style.display = 'block';
+            if(cart.length != 0) {
+                modal.style.display = 'block';
+            }
+            else {
+                alert('The cart is empty. Please add an item.');
+            }
+            
         });
 
         closeModal.addEventListener('click', function() {
@@ -322,7 +359,7 @@ class Storage {
         localStorage.setItem('cart', JSON.stringify(cart));
     }
     static getCart() {
-        return localStorage.getItem('cart')?JSON.parse(localStorage.getItem('cart')):[]
+        return localStorage.getItem('cart')?JSON.parse(localStorage.getItem('cart')):[];
     }
 }
 
@@ -430,8 +467,11 @@ class Validation {
             }
         }, false);
 
+        // Clean the cart after submit
         form.addEventListener('submit', function() {
             alert('Payment Successful\r\nThank you for shopping at "The Smart Cart"!');
+            cart = [];
+            Storage.saveCart(cart);
         });
     }
 }

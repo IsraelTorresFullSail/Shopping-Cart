@@ -87,7 +87,7 @@
                 <div class="row justify-content-center">
                     <!-- Modal content -->
                     <div class="col-12 col-xs-10 col-md-6 col-lg-6 modal-content">
-                        <div class="row mb-5 cards-wrapper">
+                        <div class="row mb-5 cards-wrapper justify-content-between">
                             <div class="col-3"><img src="./images/mastercard.png" alt="MasterCard card image"></div>
                             <div class="col-3"><img src="./images/amexcard.png" alt="American Express card image"></div>
                             <div class="col-3"><img src="./images/visacard.png" alt="Visa card image"></div>
@@ -95,21 +95,21 @@
                         </div>
                         <form id="paymentForm" role="form">
                             <div class="row justify-content-between mb-3">
-                                <div class="col">
+                                <div class="col-12 col-sm-6">
                                     <label for="firstname">First *</label>
                                     <input type="text" name="firstname" id="firstname" placeholder="First" required>
                                 </div>
-                                <div class="col">
+                                <div class="col-12 col-sm-6">
                                     <label for="lastname">Last *</label>
                                     <input type="text" name="lastname" id="lastname" placeholder="Last" required>
                                 </div>
                             </div>
                             <div class="row justify-content-between mb-4">
-                                <div class="col">
+                                <div class="col-12 col-sm-6">
                                     <label for="email">Email *</label>
                                     <input type="email" name="email" id="email" placeholder="email@domain.com" required>
                                 </div>
-                                <div class="col">
+                                <div class="col-12 col-sm-6">
                                     <label for="phone">Phone *</label>
                                     <input type="number" name="phone" id="phone" placeholder="(123) 456-7890" minlength="10" maxlength="10" required>
                                 </div>
@@ -132,11 +132,11 @@
                                 </div>
                             </div>
                             <div class="row justify-content-between mb-4">
-                                <div class="col">
+                                <div class="col-12 col-sm-6">
                                     <label for="expiryDate">Expiry Date *</label>
                                     <input type="date" name="expiryDate" id="expiryDate" placeholder="MM / YY" required>
                                 </div>
-                                <div class="col">
+                                <div class="col-12 col-sm-6">
                                     <label for="cvvCode">CVV Code *</label>
                                     <input type="number" name="cvvCode" id="cvvCode" placeholder="Enter CVV code" minlength="3" maxlength="4" required>
                                 </div>

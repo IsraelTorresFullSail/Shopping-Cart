@@ -202,6 +202,7 @@ main {
                     float: right;
                     margin-top: 15px;
                     margin-bottom: 50px;
+                    background-color: transparent;
                     color: $orange-light;
                     padding: 0; 
                     border: none;
@@ -235,10 +236,6 @@ main {
                 .add > .fa-plus {
                     pointer-events: none;
                 }
-            }
-
-            @media only screen and (max-width: 600px) {
-                margin-left: -10px !important;
             }
         }
 
