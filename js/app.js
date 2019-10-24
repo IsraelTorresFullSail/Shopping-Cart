@@ -43,6 +43,7 @@ class Products {
         this.ui.cartLogic();
         this.ui.setupApp();
         this.ui.displayModalForm();
+        this.ui.displayYear();
 
         this.validation.formValidation();
     }
@@ -67,10 +68,6 @@ class Products {
 }
 
 // --------------------------- Display Products --------------------------- //
-// vars to use in UI
-let slideIndex = 0;
-let slideArray = [];
-
 class UI {
     // Display list of products
     displayProducts(products) {
@@ -174,19 +171,6 @@ class UI {
                 // display cart item
                 let itemsInCart = JSON.parse(localStorage.getItem('cart'));
                 this.createCartItem(itemsInCart);
-
-
-                // verify if the item already exist in the cart   // TODO:
-                // itemsInCart.find(item => {
-                //     if(item.id !== btnsAddToCart.dataset.id) {
-                //         this.createCartItem(itemsInCart);
-                        
-                //     }
-                //     else {
-                //         alert('This item already exist in the cart');
-                //     }
-                // });
-                
             }
         })
     }
@@ -343,6 +327,10 @@ class UI {
         closeModal.addEventListener('click', function() {
             modal.style.display ='none';
         });
+    }
+
+    displayYear() {
+        document.querySelector('#copyright').appendChild(document.createTextNode(new Date().getFullYear()));
     }
 }
 
