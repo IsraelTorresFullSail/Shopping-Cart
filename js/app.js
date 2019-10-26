@@ -74,7 +74,7 @@ class UI {
         let result = '';
         products.forEach( product => {
             result +=`
-                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-3 newpadding">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-3 newpadding pageItem">
                     <div class="product-card ">
                         <p class="p-small">${product.company}</p>
                         <h2>${product.name}</h2>
