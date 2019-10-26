@@ -145,32 +145,42 @@ class UI {
 
                 let btnsAddToCart = e.target;
 
-                // Disable button after add product to cart
-                buttonsDOM.push(btnsAddToCart);
-                btnsAddToCart.setAttribute('disabled', '');
-
-                // Set id
+                // Verify if the item exist in the cart before allow add function
+                cart = Storage.getCart();
                 let id = btnsAddToCart.dataset.id;
-                
-                // get product from products
-                let cartItem = {...Storage.getProduct(id), amount:1};
+                let inCart = cart.find(item => item.id === id);
+                if(inCart) {
+                    alert('This item already exist in the cart');
+                    btnsAddToCart.setAttribute('disabled', '');
+                }
+                else {
+                    // Disable button after add product to cart
+                    buttonsDOM.push(btnsAddToCart);
+                    btnsAddToCart.setAttribute('disabled', '');
 
-                // add product the cart
-                cart = [...cart, cartItem];
+                    // Set id
+                    let id = btnsAddToCart.dataset.id;
+                    
+                    // get product from products
+                    let cartItem = {...Storage.getProduct(id), amount:1};
 
-                // enable checkout button
-                let btnCheckout = document.querySelector('.checkout');
-                btnCheckout.disabled = false;
+                    // add product the cart
+                    cart = [...cart, cartItem];
 
-                // save cart in local storage
-                Storage.saveCart(cart); 
+                    // enable checkout button
+                    let btnCheckout = document.querySelector('.checkout');
+                    btnCheckout.disabled = false;
 
-                // set cart values
-                this.setCartValues(cart);
+                    // save cart in local storage
+                    Storage.saveCart(cart); 
 
-                // display cart item
-                let itemsInCart = JSON.parse(localStorage.getItem('cart'));
-                this.createCartItem(itemsInCart);
+                    // set cart values
+                    this.setCartValues(cart);
+
+                    // display cart item
+                    let itemsInCart = JSON.parse(localStorage.getItem('cart'));
+                    this.createCartItem(itemsInCart);
+                }
             }
         })
     }
@@ -296,6 +306,7 @@ class UI {
         let btnCheckout = document.querySelector('.checkout');
         if(cart.length == 0) {
             btnCheckout.setAttribute('disabled', '');
+
         }
         else {
             btnCheckout.removeAttribute('disabled');
@@ -305,6 +316,7 @@ class UI {
 
     // Enable add button when delete item from the cart
     getSingleButton(id) {
+
         return buttonsDOM.find(button => button.dataset.id === id);
     }
 
@@ -348,6 +360,9 @@ class Storage {
     }
     static getCart() {
         return localStorage.getItem('cart')?JSON.parse(localStorage.getItem('cart')):[];
+    }
+    static saveAddButtons(btns) {
+        localStorage.setItem('addBtns', JSON.stringify(btns));
     }
 }
 
